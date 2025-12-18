@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@300;400;500;600;700&family=Cormorant:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Cormorant', 'Merriweather', serif;
+  
+  --color-primary-50: #f0f9f1;
+  --color-primary-100: #daf1dd;
+  --color-primary-200: #b8e3bf;
+  --color-primary-300: #8bce97;
+  --color-primary-400: #5bb26c;
+  --color-primary-500: #3a9550;
+  --color-primary-600: #2C5F2D;
+  --color-primary-700: #245d31;
+  --color-primary-800: #204a29;
+  --color-primary-900: #1c3d23;
+  
+  --color-accent-50: #faf8f5;
+  --color-accent-100: #f5f0e8;
+  --color-accent-200: #e8ddc8;
+  --color-accent-300: #D4A574;
+  --color-accent-400: #c89558;
+  --color-accent-500: #8B7355;
+  --color-accent-600: #6b5942;
+  --color-accent-700: #594938;
+  --color-accent-800: #4a3d31;
+  --color-accent-900: #3f352a;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-600);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-700);
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-primary-600);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: 2px solid var(--color-primary-600);
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-50);
+  transform: scale(1.05);
+}
+
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Better background colors */
+body {
+  background-color: #f9fafb;
+}
+
+/* Section backgrounds */
+.bg-gray-50 {
+  background-color: #f9fafb !important;
+}
+
+.section-padding {
+  background-color: #ffffff;
+}
