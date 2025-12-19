@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { getAssetUrl } from '../utils/getAssetUrl';
+
 
 const OurStory = () => {
   return (
@@ -43,7 +45,7 @@ const OurStory = () => {
             transition={{ duration: 0.6 }}
           >
             <img
-              src='/images/us.jpg'
+              src= {getAssetUrl('/images/us.jpg')}
               alt="Our land"
               className="w-full rounded-xl shadow-xl mb-12"
             />
