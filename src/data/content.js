@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/getAssetUrl';
 export const siteInfo = {
   name: "Kinder World Retreat & Rescue",
   tagline: "A KINDer World",
@@ -16,7 +17,7 @@ export const accommodations = [
     subtitle: 'Cozy Off-Grid Cabin',
     capacity: 'Up to 3 guests',
     price: 'Contact for pricing',
-    image: '/images/gallery/bunkie1.jpg',
+    image: getAssetUrl('images/gallery/bunkie1.jpg'),
     description: 'Nestled beside our serene private lake, the Bunkie offers luxury while you reconnect with nature.',
     features: [
       'Private screened-in patio',

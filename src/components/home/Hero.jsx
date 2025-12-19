@@ -3,18 +3,15 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import Button from '../common/Button';
+import { getAssetUrl } from '../../utils/getAssetUrl';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroImages = [
-    '/images/hero/hero1.jpg',
-    '/images/hero/hero2.jpg',
-    '/images/hero/hero3.jpg',
-    '/images/hero/hero4.jpg',
-    '/images/hero/hero5.jpg',
-    '/images/hero/hero8.jpg',
-    
+    getAssetUrl('images/hero/hero1.jpg'),
+    getAssetUrl('images/hero/hero2.jpg'),
+    getAssetUrl('images/hero/hero3.jpg'),
   ];
 
   useEffect(() => {

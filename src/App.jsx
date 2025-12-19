@@ -11,8 +11,11 @@ import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
 function App() {
+  // Match vite.config.js - no basename in development
+  const basename = import.meta.env.PROD ? '/KinderworldCA' : '';
+  
   return (
-    <Router basename="/KinderworldCA">
+    <Router basename={basename}>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

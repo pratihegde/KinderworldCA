@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getAssetUrl } from '../../utils/getAssetUrl';
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +57,7 @@ const Header = () => {
           {/* Logo - ENLARGED */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/images/logo.jpg" 
+              src={getAssetUrl('images/logo.jpg')}
               alt="Kinder World Logo" 
               className={`transition-all duration-300 ${
                 isScrolled ? 'h-20 md:h-24' : 'h-24 md:h-28'

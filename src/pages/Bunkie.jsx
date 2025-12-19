@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Users, WifiOff, Zap, Check } from 'lucide-react';
 import Button from '../components/common/Button';
+import { getAssetUrl } from '../utils/getAssetUrl';
 
 const Bunkie = () => {
   const features = [
@@ -17,17 +18,17 @@ const Bunkie = () => {
     'Plant-based foods only'
   ];
 
-  // Gallery images - add all your bunkie images here
+  // Gallery images - using getAssetUrl helper
   const galleryImages = [
-    { src: '/images/gallery/bunkie1.jpg', alt: 'Bunkie exterior view' },
-    { src: '/images/gallery/bunkie2.jpg', alt: 'Lake view from bunkie' },
-    { src: '/images/gallery/bunkie3.jpg', alt: 'Bunkie with lake' },
-    { src: '/images/gallery/bunkie4.jpg', alt: 'Bunkie interior bathroom' },
-    { src: '/images/gallery/bunkie5.jpg', alt: 'Bunkie screened patio' },
-    { src: '/images/gallery/bunkie6.jpg', alt: 'Bunkie kitchen area' },
-    /*{ src: '/images/gallery/bunkie7.jpg', alt: 'Bunkie bedroom' },
-    { src: '/images/gallery/bunkie8.jpg', alt: 'Bunkie sunset view' },
-    { src: '/images/gallery/bunkie9.jpg', alt: 'Bunkie night view' },*/
+    { src: getAssetUrl('images/gallery/bunkie1.jpg'), alt: 'Bunkie exterior view' },
+    { src: getAssetUrl('images/gallery/bunkie2.jpg'), alt: 'Lake view from bunkie' },
+    { src: getAssetUrl('images/gallery/bunkie3.jpg'), alt: 'Bunkie with lake' },
+    { src: getAssetUrl('images/gallery/bunkie4.jpg'), alt: 'Bunkie interior bathroom' },
+    { src: getAssetUrl('images/gallery/bunkie5.jpg'), alt: 'Bunkie screened patio' },
+    { src: getAssetUrl('images/gallery/bunkie6.jpg'), alt: 'Bunkie kitchen area' },
+    { src: getAssetUrl('images/gallery/bunkie7.jpg'), alt: 'Bunkie bedroom' },
+    { src: getAssetUrl('images/gallery/bunkie8.jpg'), alt: 'Bunkie sunset view' },
+    { src: getAssetUrl('images/gallery/bunkie9.jpg'), alt: 'Bunkie night view' },
   ];
 
   return (
@@ -36,7 +37,7 @@ const Bunkie = () => {
       <section
         className="relative h-[70vh] flex items-center justify-center"
         style={{
-          backgroundImage: 'url(/images/gallery/bunkie1.jpg)',
+          backgroundImage: `url(${getAssetUrl('images/gallery/bunkie1.jpg')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
