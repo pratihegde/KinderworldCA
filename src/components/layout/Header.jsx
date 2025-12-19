@@ -47,23 +47,29 @@ const Header = () => {
   return (
     <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 border-b border-gray-200/50 ${
-        isScrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 backdrop-blur-sm py-6'
+        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 backdrop-blur-sm py-4'
       }`}
     >
       <nav className="container-custom px-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo - ENLARGED */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/images/logo.png" 
+              src="/images/logo.jpg" 
               alt="Kinder World Logo" 
-              className="h-16 md:h-20 w-auto"
+              className={`transition-all duration-300 ${
+                isScrolled ? 'h-20 md:h-24' : 'h-24 md:h-28'
+              } w-auto`}
             />
             <div className="flex flex-col">
-              <span className="font-serif text-2xl md:text-3xl font-bold text-primary-600">
+              <span className={`font-serif font-bold text-primary-600 transition-all duration-300 ${
+                isScrolled ? 'text-2xl md:text-3xl' : 'text-3xl md:text-4xl'
+              }`}>
                 A KINDer World
               </span>
-              <span className="text-xs md:text-sm text-primary-500 tracking-wider">
+              <span className={`text-primary-500 tracking-wider transition-all duration-300 ${
+                isScrolled ? 'text-xs md:text-sm' : 'text-sm md:text-base'
+              }`}>
                 RETREAT & RESCUE
               </span>
             </div>

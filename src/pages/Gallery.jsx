@@ -6,10 +6,10 @@ const Gallery = () => {
   const [lightboxImage, setLightboxImage] = useState(null);
 
   const images = [
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800',
-    'https://images.unsplash.com/photo-1511497584788-876760111969?w=800',
-    'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800',
-    'https://images.unsplash.com/photo-1464146072230-91cabc968266?w=800',
+    '/images/hero/hero5.jpg',
+    '/images/hero/hero8.jpg',
+    '/images/kc2.jpg',
+    '/images/kc1.jpg',
     'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800',
     'https://images.unsplash.com/photo-1484406566174-9da000fda645?w=800',
     'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',

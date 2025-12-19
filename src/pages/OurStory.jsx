@@ -43,7 +43,7 @@ const OurStory = () => {
             transition={{ duration: 0.6 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1511497584788-876760111969?w=1200"
+              src='/images/us.jpg'
               alt="Our land"
               className="w-full rounded-xl shadow-xl mb-12"
             />

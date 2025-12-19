@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Users, Wifi, WifiOff, Zap, Check } from 'lucide-react';
+import { Users, WifiOff, Zap, Check } from 'lucide-react';
 import Button from '../components/common/Button';
 
 const Bunkie = () => {
@@ -17,13 +17,26 @@ const Bunkie = () => {
     'Plant-based foods only'
   ];
 
+  // Gallery images - add all your bunkie images here
+  const galleryImages = [
+    { src: '/images/gallery/bunkie1.jpg', alt: 'Bunkie exterior view' },
+    { src: '/images/gallery/bunkie2.jpg', alt: 'Lake view from bunkie' },
+    { src: '/images/gallery/bunkie3.jpg', alt: 'Bunkie with lake' },
+    { src: '/images/gallery/bunkie4.jpg', alt: 'Bunkie interior bathroom' },
+    { src: '/images/gallery/bunkie5.jpg', alt: 'Bunkie screened patio' },
+    { src: '/images/gallery/bunkie6.jpg', alt: 'Bunkie kitchen area' },
+    /*{ src: '/images/gallery/bunkie7.jpg', alt: 'Bunkie bedroom' },
+    { src: '/images/gallery/bunkie8.jpg', alt: 'Bunkie sunset view' },
+    { src: '/images/gallery/bunkie9.jpg', alt: 'Bunkie night view' },*/
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section
         className="relative h-[70vh] flex items-center justify-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=1920)',
+          backgroundImage: 'url(/images/gallery/bunkie1.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -56,9 +69,9 @@ const Bunkie = () => {
       </section>
 
       {/* Description */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -78,17 +91,45 @@ const Bunkie = () => {
                 A guest favourite is our indulgent bathroom, featuring a full shower with breathtaking views of the lake.
               </p>
             </motion.div>
+
+            {/* Vertical Scrolling Gallery */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="relative h-[600px] overflow-hidden rounded-xl shadow-2xl"
             >
-              <img
-                src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800"
-                alt="Bunkie interior"
-                className="rounded-xl shadow-2xl"
-              />
+              <style>
+                {`
+                  @keyframes scrollVertical {
+                    0% {
+                      transform: translateY(0);
+                    }
+                    100% {
+                      transform: translateY(-50%);
+                    }
+                  }
+                  .animate-scroll-vertical {
+                    animation: scrollVertical 30s linear infinite;
+                  }
+                  .animate-scroll-vertical:hover {
+                    animation-play-state: paused;
+                  }
+                `}
+              </style>
+              <div className="animate-scroll-vertical">
+                {/* Duplicate images for seamless loop */}
+                {[...galleryImages, ...galleryImages].map((image, index) => (
+                  <div key={index} className="mb-4">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-80 object-cover rounded-lg"
+                    />
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
 
@@ -135,24 +176,36 @@ const Bunkie = () => {
             </p>
           </motion.div>
 
-          {/* Gallery */}
+          {/* Full Photo Gallery Grid */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid md:grid-cols-2 gap-4 mb-16"
+            className="mb-16"
           >
-            <img
-              src="https://images.unsplash.com/photo-1464146072230-91cabc968266?w=800"
-              alt="Lake view"
-              className="rounded-xl shadow-lg w-full h-64 object-cover"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800"
-              alt="Forest"
-              className="rounded-xl shadow-lg w-full h-64 object-cover"
-            />
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              Gallery
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {galleryImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="relative aspect-square overflow-hidden rounded-lg shadow-lg group cursor-pointer"
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
           {/* CTA */}
