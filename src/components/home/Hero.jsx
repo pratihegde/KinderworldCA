@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Play } from 'lucide-react';
 import Button from '../common/Button';
 import { getAssetUrl } from '../../utils/getAssetUrl';
 
@@ -17,87 +17,79 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 6000);
+    }, 7000);
     return () => clearInterval(timer);
   }, [heroImages.length]);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Full-screen Image Slider */}
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Cinematic Image Slider */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="absolute inset-0 z-0"
         >
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-[7000ms] ease-linear scale-110"
             style={{ backgroundImage: `url(${heroImages[currentSlide]})` }}
           >
-            <div className="absolute inset-0 bg-black/25" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+            <div className="absolute inset-0 bg-black/10" />
           </div>
         </motion.div>
       </AnimatePresence>
 
-      {/* Minimal Content - Skyridge Inspired */}
-      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          {/* Main Headline - Large & Elegant */}
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-8 tracking-tight leading-tight">
-            Escape to Nature.<br />
-            Return to Yourself.
-          </h1>
-
-          {/* Subheadline - Clean & Simple */}
-          <p className="text-lg md:text-xl lg:text-2xl mb-12 font-light tracking-wide opacity-95 max-w-2xl mx-auto">
-            A peaceful, plant-based retreat in 300 acres of pristine Ontario wilderness
-          </p>
-
-          {/* Single CTA Button */}
-          <Link to="/contact">
-            <Button className="bg-white text-primary-700 hover:bg-gray-100 px-10 py-4 text-base md:text-lg font-medium shadow-xl">
-              Book Your Escape
-            </Button>
-          </Link>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-        >
+      {/* Hero Content */}
+      <div className="relative z-10 container-custom px-6 text-center">
+        <div className="max-w-5xl mx-auto">
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+            className="mb-8"
           >
-            <span className="text-xs md:text-sm mb-2 tracking-widest uppercase opacity-75 font-light">Discover More</span>
-            <ArrowDown size={20} className="opacity-75" />
+            <span className="inline-block px-5 py-2 border border-white/20 backdrop-blur-md rounded-full text-white text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium mb-6">
+              Ontario's Hidden Sanctuary
+            </span>
           </motion.div>
-        </motion.div>
-      </div>
 
-      {/* Minimalist Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-        {heroImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`h-1 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60 w-1'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+          <div className="mb-10">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="font-serif text-6xl md:text-8xl lg:text-[10rem] font-bold text-white leading-[1.1] tracking-tighter"
+            >
+              Wildly <span className="italic font-light text-accent-100 block md:inline md:ml-4">Peaceful</span>
+            </motion.h1>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="text-lg md:text-2xl text-white/90 font-light mb-14 max-w-3xl mx-auto leading-relaxed"
+          >
+            A private sanctuary across 300 acres of pristine wilderness.
+            Reconnect with nature, animals, and your inner self on our 100% vegan property.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
+            <Link to="/contact">
+              <Button className="bg-white hover:bg-accent-100 text-primary-900 border-none px-14 py-6 text-xl font-bold rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95">
+                Book Your Retreat
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

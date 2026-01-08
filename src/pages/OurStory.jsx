@@ -43,11 +43,12 @@ const OurStory = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col items-center"
           >
             <img
-              src= {getAssetUrl('/images/us.jpg')}
+              src={getAssetUrl('/images/us.jpg')}
               alt="Our land"
-              className="w-full rounded-xl shadow-xl mb-12"
+              className="w-full max-w-2xl rounded-3xl shadow-2xl mb-16 object-cover aspect-video"
             />
 
             <div className="prose prose-lg max-w-none">
@@ -73,7 +74,7 @@ const OurStory = () => {
                   There is an urgency to take steps to heal and nurture the planet. Creating A KINDer World is our contribution to making a positive change. For us, this is where action meets intention, and hopefully inspiring change through mindful living.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Nonviolence, compassion, and ethical stewardship guide us. This means treading lightly, reusing resources where possible, conserving water, and making choices that honour and protect all living beings. As a fully plant-based property, we invite guests to explore a way of living that nurtures rather than harms—where animals are observed in nature, not consumed on a plate.
+                  Nonviolence, compassion, and ethical stewardship guide us. This means treading lightly, reusing resources where possible, conserving water, and making choices that honour and protect all living beings. As a fully vegan property, we invite guests to explore a way of living that nurtures rather than harms—where animals are observed in nature, not consumed on a plate.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Beyond providing a peaceful escape, we aim to inspire a shift in perspective. Our Kids Summer Camp fosters deep connections with nature, encouraging empathy, creativity, and ethical thinking in future generations. We hope that every guest leaves feeling rejuvenated, empowered, and enlightened, with a renewed sense of responsibility toward our planet and all who inhabit it.

@@ -15,7 +15,7 @@ const Bunkie = () => {
     'Built with reclaimed materials',
     'Completely off-grid',
     'Biodegradable products only',
-    'Plant-based foods only'
+    'Vegan foods only'
   ];
 
   // Gallery images - using getAssetUrl helper
@@ -173,7 +173,7 @@ const Bunkie = () => {
               As the Bunkie is completely off-grid and deeply connected to nature, we ask guests to conserve power and use only biodegradable products inside and out.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              In keeping with our mission of compassion for all living beings, we kindly request that only plant-based foods be brought onto the property. This land is a sanctuary—a retreat from harm, where all creatures are observed and respected, not consumed.
+              In keeping with our mission of compassion for all living beings, we kindly request that only vegan foods be brought onto the property. This land is a sanctuary—a retreat from harm, where all creatures are observed and respected, not consumed.
             </p>
           </motion.div>
 

@@ -5,7 +5,7 @@ export const siteInfo = {
   subtitle: "Retreat & Rescue",
   email: "akinderworldrescue@gmail.com",
   phone: "+1-XXX-XXX-XXXX",
-  location: "Between Toronto and Montreal, Ontario",
+  location: "Our Location: our private property is conveniently located between Toronto and Montreal. Please reach out for exact address and directions.",
   facebook: "https://www.facebook.com/profile.php?id=100092383604588",
   instagram: "https://www.instagram.com/kinderworldretreatandrescue",
 };
@@ -60,7 +60,7 @@ export const accommodations = [
       'Wildlife observation',
       'Water activities',
       'Creative workshops',
-      'Plant-based meals',
+      'Vegan meals',
       'Ethical thinking development'
     ],
     slug: '/kids-camp'
@@ -145,7 +145,7 @@ export const whyChooseUs = [
   },
   {
     icon: '🌱',
-    title: '100% Plant-Based',
+    title: '100% Vegan',
     description: 'Fully vegan property honoring all living beings'
   },
   {

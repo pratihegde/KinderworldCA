@@ -5,14 +5,19 @@ import { siteInfo } from '../../data/content';
 
 const Footer = () => {
   return (
-    <footer className="bg-primary-900 text-white">
+    <footer className="text-white" style={{ backgroundColor: '#7A746C' }}>
       <div className="container-custom px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="font-serif text-xl font-bold mb-4">A KINDer World</h3>
-            <p className="text-primary-100 text-sm leading-relaxed">
+            <h3 className="font-serif text-xl font-extrabold mb-4">
+              A <span className="font-black">KIND</span>er World
+            </h3>
+            <p className="text-primary-100 text-sm leading-relaxed mb-3">
               A peaceful sanctuary between Toronto and Montreal, where nature thrives and all beings are respected.
+            </p>
+            <p className="text-primary-200 text-xs italic">
+              A Hunt Camp Turns Vegan Retreat
             </p>
           </div>
 
@@ -60,11 +65,6 @@ const Footer = () => {
               <li>
                 <Link to="/kids-camp" className="text-primary-100 hover:text-white transition-colors">
                   Kids Camp
-                </Link>
-              </li>
-              <li>
-                <Link to="/activities" className="text-primary-100 hover:text-white transition-colors">
-                  Activities
                 </Link>
               </li>
             </ul>
