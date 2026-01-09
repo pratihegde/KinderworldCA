@@ -10,7 +10,9 @@ const Hero = () => {
 
   const heroImages = [
     getAssetUrl('images/hero/hero1.jpg'),
+    getAssetUrl('images/kidscamp/group.jpg'),
     getAssetUrl('images/hero/hero2.jpg'),
+    getAssetUrl('images/kidscamp/3girls.jpg'),
     getAssetUrl('images/hero/hero3.jpg'),
   ];
 
@@ -85,7 +87,7 @@ const Hero = () => {
           >
             <Link to="/contact">
               <Button className="bg-white hover:bg-accent-100 text-primary-900 border-none px-14 py-6 text-xl font-bold rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95">
-                Book Your Retreat
+                Book Your Stay
               </Button>
             </Link>
           </motion.div>

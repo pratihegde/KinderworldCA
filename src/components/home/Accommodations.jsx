@@ -34,39 +34,39 @@ const AccommodationCard = ({ accommodation, index }) => {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, delay: index * 0.15 }}
     >
-      <div className="bg-white rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_15px_50px_rgb(0,0,0,0.12)] transition-all duration-500 overflow-hidden group">
+      <div className="bg-primary-50 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_15px_50px_rgb(0,0,0,0.12)] transition-all duration-500 overflow-hidden group">
         <div className="grid lg:grid-cols-2 gap-0">
           {/* Text Content with Parallax */}
-          <motion.div 
+          <motion.div
             style={{ y: textY }}
             className="p-10 md:p-12 lg:p-14 xl:p-16 flex flex-col justify-center order-2 lg:order-1 relative z-10"
           >
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-[10px] md:text-xs font-normal text-primary-600 mb-4 uppercase tracking-[0.15em]"
+              className="text-xs md:text-sm font-bold text-primary-600 mb-6 uppercase tracking-[0.3em]"
             >
               {accommodation.name}
             </motion.p>
 
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="font-serif text-3xl md:text-4xl lg:text-[42px] xl:text-5xl text-gray-900 mb-5 leading-[1.1] font-light"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-900 mb-8 leading-[1.1] font-light"
             >
               {accommodation.subtitle}
             </motion.h3>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-gray-600 text-sm md:text-base lg:text-base leading-relaxed mb-8 max-w-lg font-light"
+              className="text-gray-700 text-lg md:text-xl lg:text-2xl leading-relaxed mb-12 max-w-xl font-light"
             >
               {accommodation.description}
             </motion.p>
@@ -95,12 +95,12 @@ const AccommodationCard = ({ accommodation, index }) => {
           </motion.div>
 
           {/* Image with Parallax and 3D effect */}
-          <motion.div 
+          <motion.div
             style={{ y: imageY }}
             className="relative aspect-[4/3] lg:aspect-auto lg:h-[500px] order-1 lg:order-2 overflow-hidden"
           >
             <motion.div
-              whileHover={{ 
+              whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.6 }
               }}
@@ -115,7 +115,7 @@ const AccommodationCard = ({ accommodation, index }) => {
                 }}
               />
             </motion.div>
-            
+
             {/* Overlay gradient for depth */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </motion.div>
@@ -136,19 +136,19 @@ const Accommodations = () => {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   return (
-    <motion.section 
+    <motion.section
       ref={containerRef}
       style={{ y: backgroundY }}
       className="py-16 md:py-24 bg-[#F5F3F0] relative overflow-hidden"
     >
       {/* Decorative elements for depth */}
-      <motion.div 
+      <motion.div
         style={{
           y: useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
         }}
         className="absolute top-0 right-0 w-96 h-96 bg-primary-100/30 rounded-full blur-3xl -z-0"
       />
-      <motion.div 
+      <motion.div
         style={{
           y: useTransform(scrollYProgress, [0, 1], ["0%", "-20%"])
         }}
@@ -164,24 +164,24 @@ const Accommodations = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 md:mb-16"
         >
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs md:text-sm uppercase tracking-[0.2em] text-gray-500 mb-4 font-normal"
+            className="text-sm md:text-base uppercase tracking-[0.4em] text-primary-600 mb-6 font-bold"
           >
             Discover
           </motion.p>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-serif text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-5 font-light leading-tight"
+            className="font-serif text-5xl md:text-7xl lg:text-8xl text-gray-900 mb-8 font-light leading-tight tracking-tighter"
           >
             Your Gateway to Nature
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -195,9 +195,9 @@ const Accommodations = () => {
         {/* Accommodation Cards - Stacked Vertically with Parallax */}
         <div className="space-y-8 md:space-y-10">
           {accommodations.map((accommodation, index) => (
-            <AccommodationCard 
-              key={accommodation.id} 
-              accommodation={accommodation} 
+            <AccommodationCard
+              key={accommodation.id}
+              accommodation={accommodation}
               index={index}
             />
           ))}

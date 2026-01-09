@@ -47,24 +47,6 @@ export const accommodations = [
     ],
     slug: '/glamp-site'
   },
-  {
-    id: 'kids-camp',
-    name: 'Kids Camp',
-    subtitle: 'Summer Nature Adventures',
-    capacity: 'Various age groups',
-    price: 'Seasonal programs',
-    image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800',
-    description: 'Foster deep connections with nature through our educational summer camp programs.',
-    features: [
-      'Nature education',
-      'Wildlife observation',
-      'Water activities',
-      'Creative workshops',
-      'Vegan meals',
-      'Ethical thinking development'
-    ],
-    slug: '/kids-camp'
-  }
 ];
 
 export const activities = [

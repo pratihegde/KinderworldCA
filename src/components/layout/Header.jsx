@@ -113,6 +113,14 @@ const Header = () => {
                   )}
                 </div>
               ))}
+
+              {/* Added Book Your Stay Button */}
+              <Link
+                to="/contact"
+                className="bg-accent-100 hover:bg-white text-primary-900 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
+              >
+                Book Your Stay
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
