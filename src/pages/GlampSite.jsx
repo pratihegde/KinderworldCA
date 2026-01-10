@@ -157,6 +157,27 @@ const GlampSite = () => {
             </motion.div>
           </div>
 
+          {/* Features Grid - Highlights */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-primary-50 rounded-xl p-8 md:p-12 mb-16"
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              Highlights
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <Check size={20} className="text-primary-600 flex-shrink-0 mt-1" />
+                  <span className="text-gray-700">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
           {/* Sustainable Stays Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -205,33 +226,7 @@ const GlampSite = () => {
             </p>
           </motion.div>
 
-          {/* Land Acknowledgement */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-primary-900 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden mb-20"
-          >
-            <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]"></div>
-            <div className="relative z-10 text-center max-w-4xl mx-auto space-y-8">
-              <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary-100">Land Acknowledgment</h3>
-              <div className="text-lg md:text-xl text-white/80 leading-relaxed font-light space-y-6">
-                <p>
-                  We acknowledge that A KINDer World is situated on the traditional territories of the Anishinaabe and Haudenosaunee peoples, including the Mississauga, Huron-Wendat and Kanienʼkeháka (Mohawk) Nations who are the original stewards and custodians of these lands. We pay respect to their Elders, past and present, and recognize the ongoing legacy of their culture and resilience on this land. As part of the Upper Canada Land Surrenders, under the Crawford Purchase of 1784, no treaty was ever signed. We promise to continue to learn, listen and challenge the real Truth and Reconciliation in our community.
-                </p>
-                <p>
-                  We are steeped in gratitude to have access to this land, for the ability to protect, cherish and honour the divine beings who reside here.
-                </p>
-                <p>
-                  We consider it our privilege to tread lightly here, using only sustainable and regenerative practices.
-                </p>
-                <p className="font-medium text-white">
-                  We thank you for joining us as we collectively strive towards creating A KINDer World for all.
-                </p>
-              </div>
-            </div>
-          </motion.div>
+
 
           {/* CTA */}
           <motion.div
@@ -252,8 +247,8 @@ const GlampSite = () => {
             </Link>
           </motion.div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

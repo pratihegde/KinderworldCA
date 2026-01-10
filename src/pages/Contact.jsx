@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Facebook, Instagram, Send } from 'lucide-react';
 import { siteInfo } from '../data/content';
+import { getAssetUrl } from '../utils/getAssetUrl';
 import Button from '../components/common/Button';
 
 const Contact = () => {
@@ -30,7 +31,7 @@ Accommodation: ${formData.accommodation}
 Message:
 ${formData.message}
     `);
-    
+
     window.location.href = `mailto:${siteInfo.email}?subject=${subject}&body=${body}`;
   };
 
@@ -46,7 +47,7 @@ ${formData.message}
       <section
         className="relative h-96 flex items-center justify-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920)',
+          backgroundImage: `url(${getAssetUrl('images/hero/hero1.jpg')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -66,7 +67,7 @@ ${formData.message}
             transition={{ delay: 0.2 }}
             className="text-xl"
           >
-            Let's Plan Your Perfect Retreat
+            We Can't Wait To Welcome You
           </motion.p>
         </div>
       </section>
@@ -145,7 +146,7 @@ ${formData.message}
             >
               <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Booking Inquiry</h2>
-                
+
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">

@@ -13,7 +13,7 @@ import Contact from './pages/Contact';
 function App() {
   // Match vite.config.js - no basename in development
   const basename = import.meta.env.PROD ? '/KinderworldCA' : '';
-  
+
   return (
     <Router basename={basename}>
       <Layout>

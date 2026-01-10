@@ -45,8 +45,8 @@ const KidsCampCTA = () => {
                                         Reconnect with nature through paddleboarding, hiking, and organic vegan meals.
                                     </p>
 
-                                    <div className="flex items-center space-x-4 text-primary-600 mb-10">
-                                        <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <div className="flex flex-wrap items-center gap-2 text-primary-600 mb-10">
+                                        <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
                                             <Calendar size={20} />
                                         </div>
                                         <span className="font-medium text-lg">August 9-15 • Ages 9-15</span>

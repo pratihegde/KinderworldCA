@@ -11,10 +11,9 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link to="/" className="inline-block group">
-              <h3 className="font-sans text-3xl font-light tracking-tight">
+              <h3 className="font-sans text-3xl font-light tracking-tight text-white hover:text-white/90 transition-colors">
                 A <span className="font-bold">KIND</span>er World
               </h3>
-              <div className="h-0.5 w-12 bg-accent-100 group-hover:w-full transition-all duration-500" />
             </Link>
             <p className="text-white/70 text-base leading-relaxed max-w-xs">
               A private 300-acre wilderness sanctuary between Toronto and Montreal,

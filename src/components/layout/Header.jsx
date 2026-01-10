@@ -25,7 +25,6 @@ const Header = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Our Story', path: '/our-story' },
     {
       name: 'Stay with us',
       hasDropdown: true,
@@ -35,6 +34,18 @@ const Header = () => {
       ]
     },
     { name: 'Kids Camp', path: '/kids-camp' },
+    {
+      name: 'Activities',
+      hasDropdown: true,
+      links: [
+        { name: 'Workshops & Retreats', path: '/activities#workshops' },
+        { name: 'Sauna', path: '/activities#sauna' },
+        { name: 'Forest Bathing', path: '/activities#forest-bathing' },
+        { name: 'Hiking', path: '/activities#hiking' },
+        { name: 'Paddleboarding', path: '/activities#paddleboarding' }
+      ]
+    },
+    { name: 'Our Story', path: '/our-story' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -44,7 +55,7 @@ const Header = () => {
       <header className="fixed w-full top-0 z-50 transition-all duration-500">
         {/* Main Navigation - Green Section */}
         <nav className={`transition-all duration-500 ${isScrolled ? 'py-1 shadow-xl' : 'py-2 md:py-3'} overflow-visible relative items-center flex`} style={{ backgroundColor: '#5E6D55' }}>
-          <div className="container-custom px-4 w-full">
+          <div className="container mx-auto max-w-[1920px] px-6 lg:px-12 w-full">
             <div className="flex justify-between items-center relative">
               {/* Logo - Left Side - Fitted to nav */}
               <Link to="/" className="flex items-center space-x-3 md:space-x-5 group">
@@ -57,7 +68,7 @@ const Header = () => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <span className={`font-sans leading-none text-white transition-all duration-500 ${isScrolled ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'
+                  <span className={`font-sans leading-none text-white transition-all duration-500 ${isScrolled ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'
                     }`}>
                     A <span className="font-bold">KIND</span>er World
                   </span>
@@ -69,12 +80,12 @@ const Header = () => {
               </Link>
 
               {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center space-x-8">
+              <div className="hidden lg:flex items-center space-x-1 xl:space-x-6">
                 {navLinks.map((link) => (
                   <div key={link.name} className="relative group/nav">
                     {link.hasDropdown ? (
                       <>
-                        <button className="flex items-center space-x-1 text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2">
+                        <button className="flex items-center space-x-1 text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2 whitespace-nowrap">
                           <span>{link.name}</span>
                           <ChevronDown size={14} />
                         </button>
@@ -83,7 +94,7 @@ const Header = () => {
                             <Link
                               key={sublink.path}
                               to={sublink.path}
-                              className="block px-8 py-4 text-sm font-bold text-gray-800 hover:bg-primary-50 hover:text-primary-700 transition-all uppercase tracking-wider"
+                              className="block px-6 py-4 text-sm font-bold text-gray-800 hover:bg-primary-50 hover:text-primary-700 transition-all uppercase tracking-wider whitespace-nowrap"
                             >
                               {sublink.name}
                             </Link>
@@ -93,7 +104,7 @@ const Header = () => {
                     ) : (
                       <Link
                         to={link.path}
-                        className="text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2"
+                        className="text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2 px-2 whitespace-nowrap"
                       >
                         {link.name}
                       </Link>
@@ -104,7 +115,7 @@ const Header = () => {
                 {/* Changed to Come Visit Button */}
                 <Link
                   to="/contact"
-                  className="bg-accent-100 hover:bg-white text-primary-900 px-8 py-3 rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
+                  className="bg-accent-100 hover:bg-white text-primary-900 px-5 py-3 rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
                 >
                   Come Visit
                 </Link>
@@ -173,7 +184,7 @@ const Header = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[60]"
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-10 md:right-10 z-[60] w-max max-w-[90vw]"
         >
           <Link
             to="/kids-camp"

@@ -93,17 +93,7 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="relative z-10 container-custom px-6 text-center">
         <div className="max-w-5xl mx-auto">
-          <motion.div
-            key={`header-${currentSlide}`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2 }}
-            className="mb-8"
-          >
-            <span className="inline-block px-5 py-2 border border-white/20 backdrop-blur-md rounded-full text-white text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium mb-6">
-              Ontario's Private Wilderness Sanctuary
-            </span>
-          </motion.div>
+
 
           <div className="mb-10 lg:h-[22rem] flex items-center justify-center">
             <AnimatePresence mode="wait">

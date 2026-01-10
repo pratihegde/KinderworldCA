@@ -178,10 +178,16 @@ const OurStory = () => {
               </div>
               <div className="md:w-2/3 space-y-6 text-lg text-primary-900/70 leading-relaxed font-light">
                 <p>
-                  We acknowledge that A KINDer World is situated on the traditional territories of the Anishinaabe and Haudenosaunee peoples, including the Mississauga, Huron-Wendat and Kanien'kehá:ka (Mohawk) Nations who are the original stewards and custodians of these lands.
+                  We acknowledge that A KINDer World is situated on the traditional territories of the Anishinaabe and Haudenosaunee peoples, including the Mississauga, Huron-Wendat and Kanienʼkeháka (Mohawk) Nations who are the original stewards and custodians of these lands. We pay respect to their Elders, past and present, and recognize the ongoing legacy of their culture and resilience on this land. As part of the Upper Canada Land Surrenders, under the Crawford Purchase of 1784, no treaty was ever signed. We promise to continue to learn, listen and challenge the real Truth and Reconciliation in our community.
                 </p>
                 <p>
-                  We pay respect to their Elders, past and present, and recognize the ongoing legacy of their culture and resilience on this land. We promise to continue to learn, listen and challenge the real Truth and Reconciliation in our community.
+                  We are steeped in gratitude to have access to this land, for the ability to protect, cherish and honour the divine beings who reside here.
+                </p>
+                <p>
+                  We consider it our privilege to tread lightly here, using only sustainable and regenerative practices.
+                </p>
+                <p className="font-medium text-primary-900">
+                  We thank you for joining us as we collectively strive towards creating A KINDer World for all.
                 </p>
               </div>
             </div>
