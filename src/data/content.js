@@ -17,8 +17,8 @@ export const accommodations = [
     subtitle: 'Cozy Off-Grid Cabin',
     capacity: 'Up to 3 guests',
     price: 'Contact for pricing',
-    image: getAssetUrl('images/gallery/bunkie1.jpg'),
-    description: 'Nestled beside our serene private lake, the Bunkie offers luxury while you reconnect with nature.',
+    image: getAssetUrl('images/gallery/bunkiewinter.jpg'),
+    description: 'Nestled beside our serene private lake, the Bunkie offers a touch of luxury while you escape to reconnect with nature in peaceful seclusion.',
     features: [
       'Private screened-in patio',
       'Full shower with lake views',
@@ -35,7 +35,7 @@ export const accommodations = [
     subtitle: 'Luxury Camping Experience',
     capacity: 'Up to 4 guests',
     price: 'Contact for pricing',
-    image: 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=800',
+    image: getAssetUrl('images/glampsite/FullSizeRender_3.jpg'),
     description: 'Experience the outdoors with comfort in our beautiful glamping setup.',
     features: [
       'Spacious tent setup',
@@ -92,19 +92,37 @@ export const testimonials = [
   {
     name: 'Dani',
     location: 'Montreal',
-    text: 'The cabin is surrounded by nature. There is so much peace and warmth, a place filled with love and tranquility. If you are looking for a place to relax and meditate, this place is perfect.',
+    text: 'The cabin is surrounded by nature. There is so much peace and warmth, a place filled with love and tranquility. If you are looking for a place to relax and meditate, this place is perfect. Additionally, we went canoeing, kayaking, stand-up paddle boarding, and swimming in the lake, and it was amazing.',
     rating: 5
   },
   {
     name: 'Matthew',
     location: 'Toronto',
-    text: 'The Bunkie had everything we needed and the bed was amazing. Completely private… we couldn\'t hear anything but the birds. No complaints whatsoever… 10/10. Stay here!',
+    text: 'The Bunkie had everything we needed and the bed was amazing. Completely private… we couldn\'t hear anything but the birds and we had the entire lake to ourselves. No complaints whatsoever… 10/10. Stay here!',
     rating: 5
   },
   {
     name: 'Maggie',
     location: 'Toronto',
-    text: 'We had a wonderful time at the Bunkie. Julie, Patrick, and Max are lovely and warm hosts who are passionate about protecting Mother Nature and wildlife.',
+    text: 'We had a wonderful time at the Bunkie. Julie, Patrick, and Max are lovely and warm hosts who are passionate about protecting Mother Nature and wildlife. We loved the stories about how they built their connections with the wildlife there.',
+    rating: 5
+  },
+  {
+    name: 'Claire',
+    location: 'Toronto',
+    text: 'Unparalleled serenity. Quite possibly the most magical setting on earth. So relaxing and cabin was adorable, cozy and very comfortable. Could not recommend more! It was so relaxing',
+    rating: 5
+  },
+  {
+    name: 'Meike',
+    location: 'Germany',
+    text: 'We saw beavers, hummingbirds, turtles, wild turkey and many more animals. And could swim several times a day in the warm lake and paddle with the Kajaks. Our 10-year old was in heaven.',
+    rating: 5
+  },
+  {
+    name: 'Shad',
+    location: 'Ottawa',
+    text: 'The Bunkie was thoughtfully equipped with all the essentials, including cookware and oil. The bathroom was pristine—cleaner than any Airbnb I\'ve stayed in before. Taking a shower while gazing out at the lake just a few meters away is a memory I will forever cherish.',
     rating: 5
   }
 ];

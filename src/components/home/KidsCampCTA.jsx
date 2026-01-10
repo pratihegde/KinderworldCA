@@ -23,7 +23,7 @@ const KidsCampCTA = () => {
                                 {/* Image Side */}
                                 <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[500px] overflow-hidden">
                                     <img
-                                        src={getAssetUrl('images/kidscamp/boards.jpg')}
+                                        src={getAssetUrl('images/kidscamp/Yoga on dock-02.jpg')}
                                         alt="Vegan Kids Camp Group"
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
                                     />
@@ -49,7 +49,7 @@ const KidsCampCTA = () => {
                                         <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
                                             <Calendar size={20} />
                                         </div>
-                                        <span className="font-medium text-lg">August 9-15 • Ages 9-14</span>
+                                        <span className="font-medium text-lg">August 9-15 • Ages 9-15</span>
                                     </div>
 
                                     <div className="inline-flex items-center space-x-3 text-primary-600 font-medium text-lg border-b border-primary-600/30 pb-1 w-fit group-hover:border-primary-600 transition-colors">

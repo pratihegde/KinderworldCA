@@ -27,7 +27,7 @@ const Header = () => {
     { name: 'Home', path: '/' },
     { name: 'Our Story', path: '/our-story' },
     {
-      name: 'Accommodations',
+      name: 'Stay with us',
       hasDropdown: true,
       links: [
         { name: 'Bunkie', path: '/bunkie' },
@@ -40,154 +40,154 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed w-full top-0 z-50 transition-all duration-500">
-      {/* Top Bar - Beige Section */}
-      <div style={{ backgroundColor: '#F3E8D8' }}>
-        <div className="container-custom px-4 py-1.5">
-          <div className="flex justify-end items-center">
-            <Link
-              to="/kids-camp"
-              className="bg-red-600 hover:bg-black text-white px-5 py-1 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-sm hover:shadow-md"
-            >
-              Enroll for 2026 Kids Camp
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation - Green Section */}
-      <nav className={`transition-all duration-500 ${isScrolled ? 'py-2 shadow-lg' : 'py-4'}`} style={{ backgroundColor: '#5E6D55' }}>
-        <div className="container-custom px-4">
-          <div className="flex justify-between items-center">
-            {/* Logo - Left Side */}
-            <Link to="/" className="flex items-center space-x-4 group">
-              <div className="relative">
-                <img
-                  src={getAssetUrl('images/logo.jpg')}
-                  alt="Kinder World Logo"
-                  className={`transition-all duration-500 rounded-full border border-white/20 ${isScrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'
-                    } w-auto`}
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className={`font-sans leading-none text-white transition-all duration-500 ${isScrolled ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'
-                  }`}>
-                  A <span className="font-bold">KIND</span>er World
-                </span>
-                <span className={`text-accent-100 font-sans tracking-[0.1em] transition-all duration-500 ${isScrolled ? 'text-[10px]' : 'text-xs'
-                  }`}>
-                  Retreat & Rescue
-                </span>
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <div key={link.name} className="relative group/nav">
-                  {link.hasDropdown ? (
-                    <>
-                      <button className="flex items-center space-x-1 text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2">
-                        <span>{link.name}</span>
-                        <ChevronDown size={14} />
-                      </button>
-                      <div className="absolute top-full left-0 w-56 bg-white shadow-xl rounded-xl py-3 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 transform translate-y-2 group-hover/nav:translate-y-0 border border-gray-50">
-                        {link.links.map((sublink) => (
-                          <Link
-                            key={sublink.path}
-                            to={sublink.path}
-                            className="block px-6 py-2.5 text-xs font-medium text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all"
-                          >
-                            {sublink.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <Link
-                      to={link.path}
-                      className="text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
+    <>
+      <header className="fixed w-full top-0 z-50 transition-all duration-500">
+        {/* Main Navigation - Green Section */}
+        <nav className={`transition-all duration-500 ${isScrolled ? 'py-1 shadow-xl' : 'py-2 md:py-3'} overflow-visible relative items-center flex`} style={{ backgroundColor: '#5E6D55' }}>
+          <div className="container-custom px-4 w-full">
+            <div className="flex justify-between items-center relative">
+              {/* Logo - Left Side - Fitted to nav */}
+              <Link to="/" className="flex items-center space-x-3 md:space-x-5 group">
+                <div className="relative flex-shrink-0">
+                  <img
+                    src={getAssetUrl('images/logo.jpg')}
+                    alt="Kinder World Logo"
+                    className={`transition-all duration-500 rounded-full ${isScrolled ? 'h-14 w-14' : 'h-16 w-16 md:h-20 md:w-20'
+                      } object-contain border-2 border-white/20 shadow-xl`}
+                  />
                 </div>
-              ))}
-
-              {/* Added Book Your Stay Button */}
-              <Link
-                to="/contact"
-                className="bg-accent-100 hover:bg-white text-primary-900 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
-              >
-                Book Your Stay
+                <div className="flex flex-col">
+                  <span className={`font-sans leading-none text-white transition-all duration-500 ${isScrolled ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'
+                    }`}>
+                    A <span className="font-bold">KIND</span>er World
+                  </span>
+                  <span className={`text-accent-100 font-sans tracking-[0.1em] transition-all duration-500 ${isScrolled ? 'text-[8px]' : 'text-[10px]'
+                    }`}>
+                    Retreat & Rescue
+                  </span>
+                </div>
               </Link>
+
+              {/* Desktop Navigation */}
+              <div className="hidden lg:flex items-center space-x-8">
+                {navLinks.map((link) => (
+                  <div key={link.name} className="relative group/nav">
+                    {link.hasDropdown ? (
+                      <>
+                        <button className="flex items-center space-x-1 text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2">
+                          <span>{link.name}</span>
+                          <ChevronDown size={14} />
+                        </button>
+                        <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-2xl py-4 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 transform translate-y-2 group-hover/nav:translate-y-0 border border-gray-100">
+                          {link.links.map((sublink) => (
+                            <Link
+                              key={sublink.path}
+                              to={sublink.path}
+                              className="block px-8 py-4 text-sm font-bold text-gray-800 hover:bg-primary-50 hover:text-primary-700 transition-all uppercase tracking-wider"
+                            >
+                              {sublink.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <Link
+                        to={link.path}
+                        className="text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+
+                {/* Changed to Come Visit Button */}
+                <Link
+                  to="/contact"
+                  className="bg-accent-100 hover:bg-white text-primary-900 px-8 py-3 rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  Come Visit
+                </Link>
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="lg:hidden text-white hover:text-accent-100 transition-colors"
+              >
+                {isOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-white hover:text-accent-100 transition-colors"
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="lg:hidden bg-primary-700 border-t border-white/10 overflow-hidden"
-              >
-                <div className="container-custom px-4 py-8 space-y-6">
-                  {navLinks.map((link) => (
-                    <div key={link.name} className="space-y-4">
-                      {link.hasDropdown ? (
-                        <>
-                          <div className="text-xs font-bold text-accent-100 uppercase tracking-widest px-2">
+            {/* Mobile Navigation */}
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="lg:hidden bg-primary-700 border-t border-white/10 overflow-hidden"
+                >
+                  <div className="container-custom px-4 py-8 space-y-6">
+                    {navLinks.map((link) => (
+                      <div key={link.name} className="space-y-4">
+                        {link.hasDropdown ? (
+                          <>
+                            <div className="text-xs font-bold text-accent-100 uppercase tracking-widest px-2">
+                              {link.name}
+                            </div>
+                            <div className="grid grid-cols-1 gap-4 pl-4 border-l-2 border-white/10">
+                              {link.links.map((sublink) => (
+                                <Link
+                                  key={sublink.path}
+                                  to={sublink.path}
+                                  className="text-lg font-medium text-white/90 hover:text-white"
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  {sublink.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </>
+                        ) : (
+                          <Link
+                            to={link.path}
+                            className="block text-xl font-bold text-white hover:text-accent-100 px-2"
+                            onClick={() => setIsOpen(false)}
+                          >
                             {link.name}
-                          </div>
-                          <div className="grid grid-cols-1 gap-4 pl-4 border-l-2 border-white/10">
-                            {link.links.map((sublink) => (
-                              <Link
-                                key={sublink.path}
-                                to={sublink.path}
-                                className="text-lg font-medium text-white/90 hover:text-white"
-                                onClick={() => setIsOpen(false)}
-                              >
-                                {sublink.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </>
-                      ) : (
-                        <Link
-                          to={link.path}
-                          className="block text-xl font-bold text-white hover:text-accent-100 px-2"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {link.name}
-                        </Link>
-                      )}
-                    </div>
-                  ))}
-                  <div className="px-4 pt-4 border-t">
-                    <Link
-                      to="/kids-camp"
-                      className="block text-center bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded font-semibold text-sm uppercase tracking-wide transition-colors"
-                    >
-                      Enroll Now for 2026
-                    </Link>
+                          </Link>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </nav>
-    </header>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </nav>
+      </header>
+
+      {/* Floating CTA - Light Organic Green - Show only on Home Page */}
+      {location.pathname === '/' && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[60]"
+        >
+          <Link
+            to="/kids-camp"
+            className="bg-[#C5E1A5] hover:bg-[#AED581] text-primary-950 px-6 py-4 md:px-10 md:py-6 rounded-full font-black text-xs md:text-base uppercase tracking-[0.1em] shadow-[0_15_50px_rgba(197,225,165,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 flex items-center space-x-3 border-2 border-white/40"
+          >
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-900 opacity-40"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-primary-900"></span>
+            </span>
+            <span>Apply for 2026 Kids Camp</span>
+          </Link>
+        </motion.div>
+      )}
+    </>
   );
 };
 

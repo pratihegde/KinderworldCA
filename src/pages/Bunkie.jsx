@@ -13,22 +13,22 @@ const Bunkie = () => {
     'Mini fridge for essentials',
     'Utensils, pots, and pans provided',
     'Built with reclaimed materials',
-    'Completely off-grid',
-    'Biodegradable products only',
-    'Vegan foods only'
+    'Completely off-grid'
   ];
 
-  // Gallery images - using getAssetUrl helper
+  // Expanded Gallery images
   const galleryImages = [
-    { src: getAssetUrl('images/gallery/bunkie1.jpg'), alt: 'Bunkie exterior view' },
-    { src: getAssetUrl('images/gallery/bunkie2.jpg'), alt: 'Lake view from bunkie' },
-    { src: getAssetUrl('images/gallery/bunkie3.jpg'), alt: 'Bunkie with lake' },
-    { src: getAssetUrl('images/gallery/bunkie4.jpg'), alt: 'Bunkie interior bathroom' },
-    { src: getAssetUrl('images/gallery/bunkie5.jpg'), alt: 'Bunkie screened patio' },
-    { src: getAssetUrl('images/gallery/bunkie6.jpg'), alt: 'Bunkie kitchen area' },
-    { src: getAssetUrl('images/gallery/bunkie7.jpg'), alt: 'Bunkie bedroom' },
-    { src: getAssetUrl('images/gallery/bunkie8.jpg'), alt: 'Bunkie sunset view' },
-    { src: getAssetUrl('images/gallery/bunkie9.jpg'), alt: 'Bunkie night view' },
+    { src: getAssetUrl('images/gallery/bunkiewinter.jpg'), alt: 'Bunkie in Winter' },
+    { src: getAssetUrl('images/gallery/bunkie1.jpg'), alt: 'Bunkie exterior' },
+    { src: getAssetUrl('images/gallery/bunkie-11.jpg'), alt: 'Lakeside View' },
+    { src: getAssetUrl('images/gallery/bunkie-3.jpg'), alt: 'Cozy Interior' },
+    { src: getAssetUrl('images/gallery/bunkie-6.jpg'), alt: 'Interior Detail' },
+    { src: getAssetUrl('images/gallery/bunkie-8.jpg'), alt: 'Morning Light' },
+    { src: getAssetUrl('images/gallery/bunkie guests.jpg'), alt: 'Guest Experience' },
+    { src: getAssetUrl('images/gallery/bunkie guests2.jpg'), alt: 'Lakeside Relaxing' },
+    { src: getAssetUrl('images/gallery/bunkie3.jpg'), alt: 'Bunkie View' },
+    { src: getAssetUrl('images/gallery/bunkie4.jpg'), alt: 'Bathroom with a view' },
+    { src: getAssetUrl('images/gallery/bunkie5.jpg'), alt: 'Screened-in Patio' },
   ];
 
   return (
@@ -58,7 +58,7 @@ const Bunkie = () => {
               </div>
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
                 <WifiOff size={18} />
-                <span>Off-Grid</span>
+                <span>Lakeside</span>
               </div>
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Zap size={18} />
@@ -79,18 +79,26 @@ const Bunkie = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Living Sustainably and Peacefully
+              <h2 className="text-4xl md:text-5xl font-serif font-light text-gray-900 mb-8 italic">
+                Cozy Off-Grid Cabin
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                The Bunkie is a cozy lakeside retreat designed for up to three guests, offering a peaceful escape into nature. Relax on your private screened-in patio, where you can take in the stunning lake views while listening to loons call, coyotes bark, and hummingbirds flutter by.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Watch as beavers glide through the water, fully immersing yourself in the beauty of the wild. Inside, you'll find everything you need for simple, off-grid living, including a two-burner propane stove, utensils, pots and pans, and a mini fridge to store your essentials—making meal prep a breeze.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                A guest favourite is our indulgent bathroom, featuring a full shower with breathtaking views of the lake.
-              </p>
+              <div className="space-y-6 text-gray-700 leading-relaxed font-light text-lg">
+                <p>
+                  Nestled beside our serene private lake, the Bunkie offers a touch of luxury while you escape to reconnect with nature in peaceful seclusion. Aside from our small family, you’ll have complete privacy to explore the vast wilderness surrounding you.
+                </p>
+                <p className="font-serif italic text-2xl text-primary-900 mt-12 mb-4">Adventure Awaits</p>
+                <p>
+                  Paddle across the tranquil waters our our private lake while finding secret swimming spots along the way. Hike our peaceful and scenic trails. Skate and snowshoe in the silent winter wonderland.
+                </p>
+                <p className="font-serif italic text-2xl text-primary-900 mt-12 mb-4">Pure Uninterrupted Nature</p>
+                <p>
+                  Experience a complete lack of noise pollution. Fill your ears only with the magical sounds of the natural world.
+                </p>
+                <p className="font-serif italic text-2xl text-primary-900 mt-12 mb-4">Off-Grid Comfort</p>
+                <p>
+                  Live in harmony with nature, enjoying the freedom of self-sufficient living while still embracing simple modern comforts. It is our honour to share this land, offering a sanctuary where all beings—human and animal alike—can exist in respect and harmony. Come create unforgettable memories in our little slice of paradise.
+                </p>
+              </div>
             </motion.div>
 
             {/* Vertical Scrolling Gallery */}
@@ -143,7 +151,7 @@ const Bunkie = () => {
             className="bg-primary-50 rounded-xl p-8 md:p-12 mb-16"
           >
             <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              What's Included
+              Highlights
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {features.map((feature, index) => (
@@ -155,26 +163,34 @@ const Bunkie = () => {
             </div>
           </motion.div>
 
-          {/* Sustainability Note */}
+          {/* Living Sustainably Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-accent-100 rounded-xl p-8 md:p-12 mb-16"
+            className="bg-accent-100 rounded-[3rem] p-12 md:p-20 mb-16"
           >
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              Our Commitment to Sustainability
+            <h3 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-10 italic">
+              Living Sustainably and Peacefully
             </h3>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              True to our commitment to sustainability, the Bunkie was built and furnished using repurposed and reclaimed materials. While it offers comfort and charm, you won't find brand-new bedding or modern luxury appliances—just a space that honours the land by reducing waste and embracing simplicity.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              As the Bunkie is completely off-grid and deeply connected to nature, we ask guests to conserve power and use only biodegradable products inside and out.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              In keeping with our mission of compassion for all living beings, we kindly request that only vegan foods be brought onto the property. This land is a sanctuary—a retreat from harm, where all creatures are observed and respected, not consumed.
-            </p>
+            <div className="space-y-8 text-gray-700 leading-relaxed font-light text-lg">
+              <p>
+                The Bunkie is a cozy lakeside retreat designed for up to three guests, offering a peaceful escape into nature. Relax on your private screened-in patio, where you can take in the stunning lake views while listening to loons call, coyotes bark, and hummingbirds flutter by. Watch as beavers glide through the water, fully immersing yourself in the beauty of the wild.
+              </p>
+              <p>
+                Inside, you'll find everything you need for simple, off-grid living, including a two-burner propane stove, utensils, pots and pans, and a mini fridge to store your essentials—making meal prep a breeze. A guest favourite is our indulgent bathroom, featuring a full shower with breathtaking views of the lake.
+              </p>
+              <p>
+                True to our commitment to sustainability, the Bunkie was built and furnished using repurposed and reclaimed materials. While it offers comfort and charm, you won’t find brand-new bedding or modern luxury appliances—just a space that honours the land by reducing waste and embracing simplicity.
+              </p>
+              <p>
+                As the Bunkie is completely off-grid and deeply connected to nature, we ask guests to conserve power and use only biodegradable products inside and out. In keeping with our mission of compassion for all living beings, we kindly request that only plant-based foods be brought onto the property. This land is a sanctuary—a retreat from harm, where all creatures are observed and respected, not consumed.
+              </p>
+              <p>
+                We invite you to experience the beauty of A KINDer World, where nature, sustainability, and kindness come together.
+              </p>
+            </div>
           </motion.div>
 
           {/* Full Photo Gallery Grid */}

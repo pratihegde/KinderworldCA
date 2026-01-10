@@ -97,7 +97,7 @@ const AccommodationCard = ({ accommodation, index }) => {
           {/* Image with Parallax and 3D effect */}
           <motion.div
             style={{ y: imageY }}
-            className="relative aspect-[4/3] lg:aspect-auto lg:h-[500px] order-1 lg:order-2 overflow-hidden"
+            className="relative aspect-[16/10] order-1 lg:order-2 overflow-hidden"
           >
             <motion.div
               whileHover={{
@@ -170,16 +170,16 @@ const Accommodations = () => {
             viewport={{ once: true }}
             className="text-sm md:text-base uppercase tracking-[0.4em] text-primary-600 mb-6 font-bold"
           >
-            Discover
+            Stay with us
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-serif text-5xl md:text-7xl lg:text-8xl text-gray-900 mb-8 font-light leading-tight tracking-tighter"
+            className="font-serif text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6 font-light leading-tight tracking-tight"
           >
-            Your Gateway to Nature
+            Hunt Camp Turns <span className="italic">Vegan Retreat</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -188,7 +188,6 @@ const Accommodations = () => {
             transition={{ delay: 0.2 }}
             className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed font-light"
           >
-            Unparalleled accommodations for the modern explorer
           </motion.p>
         </motion.div>
 

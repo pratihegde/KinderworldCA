@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
     },
     {
       title: 'Wildlife Sanctuary',
-      description: 'A dedicated haven where beavers, deer, and turkeys are respected as the true owners of the land.',
+      description: 'A dedicated haven where wild animals are respected as the true owners of the land.',
       icon: <Shield className="w-8 h-8" />,
     },
     {
@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
     },
     {
       title: 'Ethical Stewardship',
-      description: 'Our mission is to protect, preserve, and rejuvenate this magical land for future generations.',
+      description: 'Our mission is to protect, preserve, and rejuvenate this magical land for future generations of all species.',
       icon: <Heart className="w-8 h-8" />,
     },
   ];
@@ -46,7 +46,7 @@ const WhyChooseUs = () => {
             viewport={{ once: true }}
             className="inline-block px-6 py-2 border-2 border-primary-600/30 rounded-full text-primary-700 text-xs uppercase tracking-[0.4em] font-bold mb-8"
           >
-            The KINDer World Difference
+            THE <span className="font-black">KIND</span>er World Difference
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}

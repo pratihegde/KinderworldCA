@@ -31,9 +31,10 @@ const KidsCamp = () => {
     const [selectedImg, setSelectedImg] = React.useState(null);
     const [heroImgIndex, setHeroImgIndex] = React.useState(0);
 
-    // All 22 local images
+    // All available local images for the gallery
     const campImages = [
         { src: getAssetUrl('images/kidscamp/group.jpg'), alt: 'Campers Group' },
+        { src: getAssetUrl('images/kidscamp/Yoga on dock-02.jpg'), alt: 'Group Hug on the Dock' },
         { src: getAssetUrl('images/kidscamp/3girls.jpg'), alt: 'Best Friends' },
         { src: getAssetUrl('images/kidscamp/3_girls_in_woods.jpg'), alt: 'Forest Exploration' },
         { src: getAssetUrl('images/kidscamp/boards.jpg'), alt: 'Paddle Boarding' },
@@ -44,7 +45,6 @@ const KidsCamp = () => {
         { src: getAssetUrl('images/kidscamp/whiteshirt.jpg'), alt: 'Summer Smiles' },
         { src: getAssetUrl('images/kidscamp/IMG_1277.jpg'), alt: 'Lake Life' },
         { src: getAssetUrl('images/kidscamp/jump.jpg'), alt: 'The Big Jump' },
-        { src: getAssetUrl('images/kidscamp/kayak.jpg'), alt: 'Kayaking' },
         { src: getAssetUrl('images/kidscamp/lake.jpg'), alt: 'Pristine Lake' },
         { src: getAssetUrl('images/kidscamp/paddle.jpg'), alt: 'Paddling Together' },
         { src: getAssetUrl('images/kidscamp/paddle2.jpg'), alt: 'Sunset Paddle' },
@@ -55,46 +55,73 @@ const KidsCamp = () => {
         { src: getAssetUrl('images/kidscamp/camp.jpg'), alt: 'Campfire Magic' },
         { src: getAssetUrl('images/kidscamp/chloseandattica.jpg'), alt: 'Puppy Love' },
         { src: getAssetUrl('images/kidscamp/KinderCamp2024-22.jpg'), alt: 'Wilderness Adventure' },
+        { src: getAssetUrl('images/kidscamp/boys.jpg'), alt: 'Camp Friends' },
+        { src: getAssetUrl('images/kidscamp/campsite.jpg'), alt: 'Forest Camping' },
+        { src: getAssetUrl('images/kidscamp/frog.jpg'), alt: 'Discovering Nature' },
+        { src: getAssetUrl('images/kidscamp/Hike-05.jpg'), alt: 'Summer Hike' },
+        { src: getAssetUrl('images/kidscamp/IMG_0729.jpg'), alt: 'Canoe Adventure' },
+        { src: getAssetUrl('images/kidscamp/IMG_1726.jpg'), alt: 'Sunny Days' },
+        { src: getAssetUrl('images/kidscamp/IMG_2836_2.jpg'), alt: 'Candid Moments' },
+        { src: getAssetUrl('images/kidscamp/IMG_2920.jpg'), alt: 'Paddle Love' },
+        { src: getAssetUrl('images/kidscamp/jess.jpg'), alt: 'Staff Members' },
+        { src: getAssetUrl('images/kidscamp/Jumping rock-07.jpg'), alt: 'Lake Fun' },
+        { src: getAssetUrl('images/kidscamp/macgrouphug.jpg'), alt: 'Big Hug' },
+        { src: getAssetUrl('images/kidscamp/Yoga on dock-06.jpg'), alt: 'Best Friends' },
+        { src: getAssetUrl('images/kidscamp/Yoga on dock-07.jpg'), alt: 'Mindful Morning' },
+        { src: getAssetUrl('images/kidscamp/kidscamp2.jpg'), alt: 'Summer Vibes' },
+    ];
+
+    // Horizontal images for the top hero backgrounds
+    const heroBackgrounds = [
+        getAssetUrl('images/kidscamp/IMG_3141_2.jpg'),
+        getAssetUrl('images/kidscamp/boards.jpg'),
+        getAssetUrl('images/kidscamp/IMG_3427_2.jpg'),
+        getAssetUrl('images/kidscamp/IMG_3159.jpg'),
+        getAssetUrl('images/kidscamp/IMG_2920.jpg'),
+        getAssetUrl('images/kidscamp/paddle.jpg'),
+        getAssetUrl('images/kidscamp/Yoga on dock-02.jpg'),
+        getAssetUrl('images/kidscamp/Hike-05.jpg')
     ];
 
     React.useEffect(() => {
-        const interval = setInterval(() => {
-            setHeroImgIndex((prev) => (prev + 1) % campImages.length);
-        }, 6000);
-        return () => clearInterval(interval);
-    }, [campImages.length]);
+        const timer = setInterval(() => {
+            setHeroImgIndex((prev) => (prev + 1) % heroBackgrounds.length);
+        }, 3000); // 3 seconds interval
+        return () => clearInterval(timer);
+    }, [heroBackgrounds.length]);
 
     return (
         <div className="min-h-screen bg-[#F3E8D8]">
             {/* Hero Section - Full Cover */}
-            <section className="relative h-[85vh] overflow-hidden flex items-center justify-center">
-                <AnimatePresence mode="wait">
+            <section className="relative h-[80vh] md:h-[85vh] overflow-hidden flex items-center justify-center bg-black">
+                <AnimatePresence initial={false}>
                     <motion.div
                         key={heroImgIndex}
-                        initial={{ opacity: 0, scale: 1.1 }}
-                        animate={{ opacity: 1, scale: 1.05 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 2, ease: "easeInOut" }}
-                        className="absolute inset-0 bg-cover bg-center transform-gpu"
-                        style={{ backgroundImage: `url(${campImages[heroImgIndex].src})` }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        className="absolute inset-0"
                     >
-                        <div className="absolute inset-0 bg-black/30" />
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-[4000ms] ease-linear scale-110"
+                            style={{ backgroundImage: `url(${heroBackgrounds[heroImgIndex]})` }}
+                        >
+                            <div className="absolute inset-0 bg-black/20" />
+                        </div>
                     </motion.div>
                 </AnimatePresence>
 
-                <div className="relative z-10 text-center text-white px-4">
+                <div className="relative z-10 text-center text-white px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <span className="inline-block px-6 py-2 bg-red-600 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-6 shadow-2xl">
-                            Summer 2026 Registration Open
-                        </span>
-                        <h1 className="text-6xl md:text-[10rem] font-sans leading-none mb-12 tracking-tight">
+                        <h1 className="text-5xl md:text-[10rem] font-sans leading-none mb-6 md:mb-12 tracking-tight">
                             A <span className="font-bold">KIND</span>er World
                         </h1>
-                        <p className="text-xl md:text-3xl font-light max-w-3xl mx-auto opacity-95 leading-relaxed">
+                        <p className="text-lg md:text-3xl font-light max-w-3xl mx-auto opacity-95 leading-relaxed">
                             Connecting children with nature through compassion, <br className="hidden md:block" /> adventure, and community.
                         </p>
                     </motion.div>
@@ -163,7 +190,7 @@ const KidsCamp = () => {
                             </div>
                             <div>
                                 <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-primary-500 mb-1">Ages</p>
-                                <p className="font-bold text-xl">9-14 Years Old</p>
+                                <p className="font-bold text-xl">9-15 Years Old</p>
                             </div>
                         </div>
                         <div className="flex items-center space-x-6 text-primary-900">
@@ -190,7 +217,7 @@ const KidsCamp = () => {
                             className="inline-flex items-center space-x-4 mb-8 bg-white/10 backdrop-blur-sm px-8 py-2 rounded-full text-white/80 border border-white/20"
                         >
                             <Camera size={20} className="text-red-300" />
-                            <span className="text-xs font-bold uppercase tracking-[0.4em]">Visual Sanctuary</span>
+                            <span className="text-xs font-bold uppercase tracking-[0.4em]">Memories</span>
                         </motion.div>
                         <motion.h2
                             initial={{ opacity: 0, y: 30 }}
@@ -232,7 +259,7 @@ const KidsCamp = () => {
                             {/* Column 2 */}
                             <div className="scroll-column relative h-full hidden md:block">
                                 <div className="animate-scroll-medium space-y-8 pt-16">
-                                    {[...campImages, ...campImages].reverse().map((img, idx) => (
+                                    {[...campImages.slice().reverse(), ...campImages.slice().reverse()].map((img, idx) => (
                                         <GalleryCard key={`col2-${idx}`} image={img} onClick={setSelectedImg} />
                                     ))}
                                 </div>
@@ -258,30 +285,25 @@ const KidsCamp = () => {
             {/* Main Content - High Contrast Dark on Beige */}
             <section className="py-32 bg-[#F3E8D8] relative">
                 <div className="container-custom max-w-6xl">
-                    <div className="grid lg:grid-cols-12 gap-20 items-start">
+                    <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="lg:col-span-7 space-y-12"
+                            className="lg:col-span-7 space-y-8 md:space-y-12"
                         >
                             <h2 className="text-5xl md:text-8xl font-serif font-bold text-primary-950 leading-[0.9]">
                                 A Wilderness <br />Built <span className="italic font-light text-primary-700">on Kindness</span>
                             </h2>
-                            <div className="space-y-8 text-primary-900/80 text-xl font-light leading-relaxed">
+                            <div className="space-y-8 text-primary-900/80 text-lg md:text-xl font-light leading-relaxed">
                                 <p>
-                                    At <strong>A KINDer World</strong> we believe that connecting with nature isn't just fun
-                                    for kids—it's vital to their healthy development.
+                                    We are thrilled to welcome the next generation of compassionate kids to our unique wilderness summer camp. At <strong>A KINDer World</strong> we strive to be as inclusive as possible, embracing children of all genders and backgrounds. However, for one special week each year, our camp is reserved exclusively for vegan children.
                                 </p>
                                 <p>
-                                    Immersed in nature, our campers sleep under the stars in tents and unplug completely
-                                    from technology. They forge deep connections with the natural world, build
-                                    beautiful friendships, and create unforgettable memories.
+                                    This intimate, week-long experience offers like-minded young people the chance to connect with nature and enjoy the joys of summer camp—without the presence of fishing or animal consumption. Campers will enjoy delicious plant-based meals while having a blast in a fully peaceful and compassionate environment.
                                 </p>
                                 <p>
-                                    Our camp fosters kindness toward each other, animals, and the planet while
-                                    offering a truly Canadian summer camp experience, with activities like
-                                    paddleboarding, swimming, hiking, and campfires.
+                                    Our A KINDer World Summer Camp takes place for one week in August. If a child you know is interested in joining, please reach out for more information!
                                 </p>
                             </div>
                         </motion.div>
@@ -293,21 +315,20 @@ const KidsCamp = () => {
                             className="lg:col-span-5 bg-white p-12 md:p-16 rounded-[4rem] border border-primary-100 shadow-2xl shadow-primary-950/5 sticky top-32"
                         >
                             <h3 className="text-4xl font-serif font-bold mb-8 text-primary-950 italic">The Vegan Experience</h3>
-                            <p className="text-primary-800/80 text-xl leading-relaxed mb-10 font-light">
+                            <p className="text-primary-800/80 text-xl leading-relaxed mb-10 font-light font-sans tracking-tight">
                                 For one special week each year, our camp is reserved exclusively for vegan children.
-                                This intimate experience offers like-minded young people the chance to connect
-                                without the presence of fishing or animal slaughter.
+                                This intimate experience offers like-minded young people the chance to connect.
                             </p>
                             <ul className="space-y-6">
                                 {[
                                     'Compassionate Community',
                                     'Delicious Vegan Meals',
-                                    'Peaceful Sanctuary Environment',
-                                    'No Tech - Fully Unplugged'
+                                    'Canadian wilderness adventure',
+                                    'Fully Unplugged - Tech Free'
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center space-x-4 text-primary-950 font-medium text-lg">
-                                        <div className="w-8 h-8 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                            <Heart size={16} className="text-red-500 fill-red-500" />
+                                        <div className="w-8 h-8 bg-primary-50 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                            <Heart size={16} className="text-primary-600 fill-primary-600" />
                                         </div>
                                         <span>{item}</span>
                                     </li>
@@ -316,11 +337,11 @@ const KidsCamp = () => {
 
                             <div className="mt-16">
                                 <Link to="/contact">
-                                    <Button className="w-full bg-red-600 hover:bg-black text-white py-8 rounded-3xl text-2xl font-bold shadow-2xl shadow-red-200 transition-all active:scale-95">
-                                        Enroll for 2026
+                                    <Button className="w-full bg-primary-600 hover:bg-primary-900 text-white py-6 md:py-8 rounded-3xl text-xl md:text-2xl font-bold shadow-2xl transition-all active:scale-95">
+                                        Apply for 2026
                                     </Button>
                                 </Link>
-                                <p className="text-center text-primary-400 text-sm mt-6 tracking-widest font-bold uppercase">Limited Spaces Available</p>
+                                <p className="text-center text-primary-400 text-[10px] md:text-sm mt-6 tracking-widest font-bold uppercase">Limited Spaces Available</p>
                             </div>
                         </motion.div>
                     </div>

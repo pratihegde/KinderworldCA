@@ -8,77 +8,130 @@ import { getAssetUrl } from '../../utils/getAssetUrl';
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const heroImages = [
-    getAssetUrl('images/hero/hero1.jpg'),
-    getAssetUrl('images/kidscamp/group.jpg'),
-    getAssetUrl('images/hero/hero2.jpg'),
-    getAssetUrl('images/kidscamp/3girls.jpg'),
-    getAssetUrl('images/hero/hero3.jpg'),
+  const slides = [
+    {
+      src: getAssetUrl('images/hero/hero6.jpg'),
+      title: "Hunt Camp Turns",
+      italicPart: "Vegan Retreat",
+      subtitle: "Transforming 300 acres into a place of peace for all."
+    },
+    {
+      src: getAssetUrl('images/hero/hero2.jpg'),
+      title: "Where Animals are",
+      italicPart: "Truly Respected",
+      subtitle: "A dedicated haven for all species."
+    },
+    {
+      src: getAssetUrl('images/hero/hero9.jpg'),
+      title: "300 Acres of",
+      italicPart: "Pristine Wilderness",
+      subtitle: "Untouched nature, where all species are protected."
+    },
+    {
+      src: getAssetUrl('images/hero/hero5.jpg'),
+      title: "Find Peace in",
+      italicPart: "Deep Woods",
+      subtitle: "Experience the silence of Ontario's off-grid forest."
+    },
+    {
+      src: getAssetUrl('images/hero/hero3.jpg'),
+      title: "A Sanctuary for",
+      italicPart: "All Species",
+      subtitle: "Every being flora, fauna, and fish is safe here."
+    },
+    {
+      src: getAssetUrl('images/hero/hero1.jpg'),
+      title: "Ethical Living,",
+      italicPart: "Truly KIND",
+      subtitle: "Discover a way of living that nurtures rather than harms."
+    },
+    {
+      src: getAssetUrl('images/hero/hero10.jpg'),
+      title: "Tread Lightly,",
+      italicPart: "Live Deeply",
+      subtitle: "A safe haven where nature thriving without exploitation."
+    },
+    {
+      src: getAssetUrl('images/hero/hero7.jpg'),
+      title: "Your Private",
+      italicPart: "Wilderness Escape",
+      subtitle: "Seclusion and freedom in the heart of nature."
+    }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 7000);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3000);
     return () => clearInterval(timer);
-  }, [heroImages.length]);
+  }, [slides.length]);
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Cinematic Image Slider */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute inset-0 z-0"
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-[7000ms] ease-linear scale-110"
-            style={{ backgroundImage: `url(${heroImages[currentSlide]})` }}
+      {/* Cinematic Image Slider - Cross-fade */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
-            <div className="absolute inset-0 bg-black/10" />
-          </div>
-        </motion.div>
-      </AnimatePresence>
+            <div
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-[8000ms] ease-linear scale-110"
+              style={{ backgroundImage: `url(${slides[currentSlide].src})` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+              <div className="absolute inset-0 bg-black/10" />
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       {/* Hero Content */}
       <div className="relative z-10 container-custom px-6 text-center">
         <div className="max-w-5xl mx-auto">
           <motion.div
+            key={`header-${currentSlide}`}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
             className="mb-8"
           >
             <span className="inline-block px-5 py-2 border border-white/20 backdrop-blur-md rounded-full text-white text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium mb-6">
-              Ontario's Hidden Sanctuary
+              Ontario's Private Wilderness Sanctuary
             </span>
           </motion.div>
 
-          <div className="mb-10">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="font-serif text-6xl md:text-8xl lg:text-[10rem] font-bold text-white leading-[1.1] tracking-tighter"
-            >
-              Wildly <span className="italic font-light text-accent-100 block md:inline md:ml-4">Peaceful</span>
-            </motion.h1>
+          <div className="mb-10 lg:h-[22rem] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={`title-${currentSlide}`}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -40 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="font-serif text-5xl md:text-8xl lg:text-9xl font-bold text-white leading-[1.1] tracking-tighter"
+              >
+                {slides[currentSlide].title} <span className="italic font-light text-accent-100 block md:inline md:ml-4">{slides[currentSlide].italicPart}</span>
+              </motion.h1>
+            </AnimatePresence>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="text-lg md:text-2xl text-white/90 font-light mb-14 max-w-3xl mx-auto leading-relaxed"
-          >
-            A private sanctuary across 300 acres of pristine wilderness.
-            Reconnect with nature, animals, and your inner self on our 100% vegan property.
-          </motion.p>
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={`subtitle-${currentSlide}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="text-lg md:text-2xl text-white/90 font-light mb-14 max-w-3xl mx-auto leading-relaxed h-16"
+            >
+              {slides[currentSlide].subtitle}
+            </motion.p>
+          </AnimatePresence>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -87,7 +140,7 @@ const Hero = () => {
           >
             <Link to="/contact">
               <Button className="bg-white hover:bg-accent-100 text-primary-900 border-none px-14 py-6 text-xl font-bold rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95">
-                Book Your Stay
+                Come Visit
               </Button>
             </Link>
           </motion.div>
