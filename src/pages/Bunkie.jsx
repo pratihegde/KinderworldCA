@@ -1,34 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Users, WifiOff, Zap, Check } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Users, Droplets, Zap, Check, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Button from '../components/common/Button';
 import { getAssetUrl } from '../utils/getAssetUrl';
 
 const Bunkie = () => {
+  const [lightboxIndex, setLightboxIndex] = useState(null);
   const features = [
     'Private screened-in patio with lake views',
     'Full shower with breathtaking lake views',
     'Two-burner propane stove',
     'Mini fridge for essentials',
     'Utensils, pots, and pans provided',
-    'Built with reclaimed materials',
-    'Completely off-grid'
+    'Animal free kitchen',
+    'Solar powered',
+    'Access to kms of private hiking trails',
+    'Use of kayaks, canoes, paddle boards',
+    'Built and decorated with reclaimed and reused materials',
+    'Wifi',
+    'Zero noise pollution'
   ];
 
-  // Expanded Gallery images
+  // Expanded Gallery images - reordered to mix different types of shots
   const galleryImages = [
     { src: getAssetUrl('images/gallery/bunkiewinter.jpg'), alt: 'Bunkie in Winter' },
-    { src: getAssetUrl('images/gallery/bunkie1.jpg'), alt: 'Bunkie exterior' },
-    { src: getAssetUrl('images/gallery/bunkie-11.jpg'), alt: 'Lakeside View' },
-    { src: getAssetUrl('images/gallery/bunkie-3.jpg'), alt: 'Cozy Interior' },
-    { src: getAssetUrl('images/gallery/bunkie-6.jpg'), alt: 'Interior Detail' },
-    { src: getAssetUrl('images/gallery/bunkie-8.jpg'), alt: 'Morning Light' },
     { src: getAssetUrl('images/gallery/bunkie guests.jpg'), alt: 'Guest Experience' },
-    { src: getAssetUrl('images/gallery/bunkie guests2.jpg'), alt: 'Lakeside Relaxing' },
-    { src: getAssetUrl('images/gallery/bunkie3.jpg'), alt: 'Bunkie View' },
+    { src: getAssetUrl('images/gallery/bunkie-3.jpg'), alt: 'Cozy Interior' },
+    { src: getAssetUrl('images/gallery/bunkie1.jpg'), alt: 'Bunkie exterior' },
     { src: getAssetUrl('images/gallery/bunkie4.jpg'), alt: 'Bathroom with a view' },
+    { src: getAssetUrl('images/gallery/bunkie guests2.jpg'), alt: 'Lakeside Relaxing' },
+    { src: getAssetUrl('images/gallery/bunkie-6.jpg'), alt: 'Interior Detail' },
+    { src: getAssetUrl('images/gallery/bunkie3.jpg'), alt: 'Bunkie View' },
+    { src: getAssetUrl('images/gallery/bunkiecutlery.jpg'), alt: 'Kitchen Setup' },
+    { src: getAssetUrl('images/gallery/bunkie-11.jpg'), alt: 'Lakeside View' },
     { src: getAssetUrl('images/gallery/bunkie5.jpg'), alt: 'Screened-in Patio' },
+    { src: getAssetUrl('images/gallery/bunkie-8.jpg'), alt: 'Morning Light' },
+    { src: getAssetUrl('images/gallery/bunkie-4.jpg'), alt: 'Bunkie Detail' },
+    { src: getAssetUrl('images/gallery/bunkie6.jpg'), alt: 'Peaceful Setting' },
+    { src: getAssetUrl('images/gallery/bunkie7.jpeg'), alt: 'Lake View' }
   ];
 
   return (
@@ -37,9 +47,9 @@ const Bunkie = () => {
       <section
         className="relative h-[70vh] flex items-center justify-center"
         style={{
-          backgroundImage: `url(${getAssetUrl('images/gallery/bunkie1.jpg')})`,
+          backgroundImage: `url(${getAssetUrl('images/gallery/bunkie6.jpg')})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'bottom',
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
@@ -57,7 +67,7 @@ const Bunkie = () => {
                 <span>Up to 3 Guests</span>
               </div>
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                <WifiOff size={18} />
+                <Droplets size={18} />
                 <span>Lakeside</span>
               </div>
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
@@ -84,7 +94,7 @@ const Bunkie = () => {
               </h2>
               <div className="space-y-6 text-gray-700 leading-relaxed font-light text-lg">
                 <p>
-                  Nestled beside our serene private lake, the Bunkie offers a touch of luxury while you escape to reconnect with nature in peaceful seclusion. Aside from our small family, you’ll have complete privacy to explore the vast wilderness surrounding you.
+                  Nestled beside the most serene private lake, the Bunkie offers a touch of luxury while you escape to reconnect with nature in peaceful seclusion. Aside from our small family, you’ll have complete privacy to explore the vast wilderness surrounding you.
                 </p>
                 <p className="font-serif italic text-2xl text-primary-900 mt-12 mb-4">Adventure Awaits</p>
                 <p>
@@ -213,6 +223,7 @@ const Bunkie = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className="relative aspect-square overflow-hidden rounded-lg shadow-lg group cursor-pointer"
+                  onClick={() => setLightboxIndex(index)}
                 >
                   <img
                     src={image.src}
@@ -237,14 +248,87 @@ const Bunkie = () => {
               Ready to Experience the Bunkie?
             </h3>
             <p className="text-lg text-gray-600 mb-8">
-              Book your stay and discover the peace of off-grid living
+              Book your stay and discover the peace of a KINDer World
             </p>
-            <Link to="/contact">
-              <Button>Book Your Stay</Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to="/contact">
+                <Button>Contact Us</Button>
+              </Link>
+              <a
+                href="https://www.airbnb.ca/rooms/41991299?guests=1&adults=1&s=67&unique_share_id=0e06b3ec-f5f9-4b32-af5c-d9197cd0f215"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#FF5A5F] hover:bg-[#E04E53] text-white px-8 py-3 rounded-full font-bold text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
+              >
+                Book on Airbnb
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] bg-black/95 flex items-center justify-center p-4"
+            onClick={() => setLightboxIndex(null)}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setLightboxIndex(null)}
+              className="absolute top-6 right-6 p-2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
+              aria-label="Close"
+            >
+              <X size={32} />
+            </button>
+
+            {/* Previous Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex((lightboxIndex - 1 + galleryImages.length) % galleryImages.length);
+              }}
+              className="absolute left-4 md:left-8 p-3 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
+              aria-label="Previous"
+            >
+              <ChevronLeft size={40} />
+            </button>
+
+            {/* Image */}
+            <motion.div
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-[90vw] max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={galleryImages[lightboxIndex].src}
+                alt={galleryImages[lightboxIndex].alt}
+                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+              />
+            </motion.div>
+
+            {/* Next Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex((lightboxIndex + 1) % galleryImages.length);
+              }}
+              className="absolute right-4 md:right-8 p-3 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
+              aria-label="Next"
+            >
+              <ChevronRight size={40} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

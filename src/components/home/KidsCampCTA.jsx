@@ -41,8 +41,7 @@ const KidsCampCTA = () => {
                                     </h3>
 
                                     <p className="text-gray-600 text-base md:text-xl leading-relaxed mb-10 max-w-xl font-light">
-                                        A week-long wilderness adventure for compassionate kids.
-                                        Reconnect with nature through paddleboarding, hiking, and organic vegan meals.
+                                        A week-long wilderness adventure for compassionate kids. Connect with nature while creating life long friendships and memories.
                                     </p>
 
                                     <div className="flex flex-wrap items-center gap-2 text-primary-600 mb-10">

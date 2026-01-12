@@ -16,8 +16,10 @@ const Footer = () => {
               </h3>
             </Link>
             <p className="text-white/70 text-base leading-relaxed max-w-xs">
-              A private 300-acre wilderness sanctuary between Toronto and Montreal,
-              connecting children and adults with the magic of the woods.
+              A private 300 acre wilderness reserve and sanctuary built on kindness and respect for all.
+            </p>
+            <p className="text-white/60 text-sm italic mt-2">
+              Hunt Camp Turns Vegan Retreat
             </p>
           </div>
 
@@ -52,7 +54,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center space-x-3 text-base text-white/80">
                 <MapPin size={18} className="text-accent-100 flex-shrink-0" />
-                <span>Private Property, ON Canada</span>
+                <span>Private Property situated conveniently between Toronto and Montreal.</span>
               </div>
             </div>
             <div className="flex space-x-5 pt-4">

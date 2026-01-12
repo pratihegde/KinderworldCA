@@ -72,7 +72,7 @@ const Header = () => {
                     }`}>
                     A <span className="font-bold">KIND</span>er World
                   </span>
-                  <span className={`text-accent-100 font-sans tracking-[0.1em] transition-all duration-500 ${isScrolled ? 'text-[8px]' : 'text-[10px]'
+                  <span className={`text-accent-100 font-sans tracking-[0.1em] transition-all duration-500 ${isScrolled ? 'text-[10px]' : 'text-xs'
                     }`}>
                     Retreat & Rescue
                   </span>
@@ -188,7 +188,7 @@ const Header = () => {
         >
           <Link
             to="/kids-camp"
-            className="bg-[#C5E1A5] hover:bg-[#AED581] text-primary-950 px-6 py-4 md:px-10 md:py-6 rounded-full font-black text-xs md:text-base uppercase tracking-[0.1em] shadow-[0_15_50px_rgba(197,225,165,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 flex items-center space-x-3 border-2 border-white/40"
+            className="bg-[#FFD700] hover:bg-[#FFC700] text-primary-950 px-6 py-4 md:px-10 md:py-6 rounded-full font-black text-xs md:text-base uppercase tracking-[0.1em] shadow-[0_15_50px_rgba(255,215,0,0.4)] transition-all duration-300 hover:scale-105 active:scale-95 flex items-center space-x-3 border-2 border-white/40"
           >
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-900 opacity-40"></span>

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Users, WifiOff, Zap, Check, Leaf, Anchor } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Users, WifiOff, Zap, Check, Leaf, Anchor, X, ChevronLeft, ChevronRight, Trees } from 'lucide-react';
 import Button from '../components/common/Button';
 import { getAssetUrl } from '../utils/getAssetUrl';
 
 const GlampSite = () => {
+  const [lightboxIndex, setLightboxIndex] = useState(null);
   const features = [
     'Solar powered outlets & lighting',
     'Screened-in outdoor kitchen',
@@ -13,22 +14,27 @@ const GlampSite = () => {
     'Composting toilet',
     'Spacious gazebo',
     'Lake access',
-    'Privacy in nature'
+    'Privacy in nature',
+    'Access to kms of private hiking trails',
+    'Private dock'
   ];
 
   // Expanded Gallery images
   const galleryImages = [
     { src: getAssetUrl('images/glampsite/campsite.jpg'), alt: 'Glamping Setup' },
     { src: getAssetUrl('images/glampsite/we_the_free.jpg'), alt: 'We The Free' },
+    { src: getAssetUrl('images/glampsite/glamp1.jpg'), alt: 'Nature Retreat' },
     { src: getAssetUrl('images/glampsite/campsite_kitchen.jpg'), alt: 'Outdoor Kitchen' },
+    { src: getAssetUrl('images/glampsite/glamp2.jpg'), alt: 'Cozy Tent' },
     { src: getAssetUrl('images/glampsite/campsite_friends.jpg'), alt: 'Friends at Camp' },
     { src: getAssetUrl('images/glampsite/camp_dock.jpg'), alt: 'Dock Views' },
     { src: getAssetUrl('images/glampsite/IMG_0322.jpg'), alt: 'Nature Vibes' },
+    { src: getAssetUrl('images/glampsite/glamp3.jpg'), alt: 'Peaceful Morning' },
     { src: getAssetUrl('images/glampsite/IMG_0876.jpg'), alt: 'Camp Life' },
     { src: getAssetUrl('images/glampsite/kinder_camp5.jpg'), alt: 'Relaxing Spot' },
-    { src: getAssetUrl('images/glampsite/paddleboard-pooch.jpg'), alt: 'Paddle Dog' },
     { src: getAssetUrl('images/glampsite/sound_bowls.jpg'), alt: 'Sound Bowls' },
     { src: getAssetUrl('images/glampsite/camp_toilet.jpg'), alt: 'Eco Toilet' },
+    { src: getAssetUrl('images/glampsite/camp_toilets.jpg'), alt: 'Facilities' },
     { src: getAssetUrl('images/glampsite/trail_to_camp_2.jpg'), alt: 'Forest Trail' },
   ];
 
@@ -55,6 +61,10 @@ const GlampSite = () => {
               A Peaceful Retreat for People, Animals and Nature
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
+                <Trees size={18} />
+                <span>Private</span>
+              </div>
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
                 <Leaf size={18} />
                 <span>Eco-Friendly</span>
@@ -209,21 +219,65 @@ const GlampSite = () => {
             </div>
           </motion.div>
 
-          {/* Host Your Own Retreat */}
+          {/* Host Your Own Retreat - Enhanced */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-24"
+            className="mb-24"
           >
-            <div className="inline-block px-6 py-2 bg-accent-100 text-accent-800 rounded-full text-sm font-bold uppercase tracking-widest mb-6">
-              New Offering
+            <div className="bg-gradient-to-br from-primary-50 via-accent-50 to-primary-100 rounded-[3rem] p-10 md:p-16 border-4 border-primary-200 shadow-2xl">
+              <div className="text-center">
+                <div className="inline-block px-8 py-3 bg-accent-400 text-white rounded-full text-sm md:text-base font-black uppercase tracking-widest mb-8 shadow-lg">
+                  ✨ New Offering ✨
+                </div>
+                <h3 className="text-4xl md:text-6xl font-serif font-bold text-primary-900 mb-8 leading-tight">
+                  Host Your Own <span className="italic text-primary-600">Retreat</span>
+                </h3>
+                <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-light mb-10 leading-relaxed">
+                  We now open our sanctuary for you to host your own intimate retreats. Connect with us to learn how you can bring your community to this peaceful haven.
+                </p>
+                <Link to="/contact">
+                  <Button className="bg-primary-600 hover:bg-primary-700 text-white px-10 py-4 text-lg font-bold shadow-xl hover:shadow-2xl">
+                    Learn More About Hosting
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <h3 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">Host Your Own Retreat</h3>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light mb-8">
-              We now open our sanctuary for you to host your own intimate retreats. Connect with us to learn how you can bring your community to this peaceful haven.
-            </p>
+          </motion.div>
+
+          {/* Full Photo Gallery Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              Gallery
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {galleryImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="relative aspect-square overflow-hidden rounded-lg shadow-lg group cursor-pointer"
+                  onClick={() => setLightboxIndex(index)}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
 
@@ -247,7 +301,70 @@ const GlampSite = () => {
             </Link>
           </motion.div>
         </div>
-      </section >
+      </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] bg-black/95 flex items-center justify-center p-4"
+            onClick={() => setLightboxIndex(null)}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setLightboxIndex(null)}
+              className="absolute top-6 right-6 p-2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
+              aria-label="Close"
+            >
+              <X size={32} />
+            </button>
+
+            {/* Previous Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex((lightboxIndex - 1 + galleryImages.length) % galleryImages.length);
+              }}
+              className="absolute left-4 md:left-8 p-3 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
+              aria-label="Previous"
+            >
+              <ChevronLeft size={40} />
+            </button>
+
+            {/* Image */}
+            <motion.div
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-[90vw] max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={galleryImages[lightboxIndex].src}
+                alt={galleryImages[lightboxIndex].alt}
+                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+              />
+            </motion.div>
+
+            {/* Next Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex((lightboxIndex + 1) % galleryImages.length);
+              }}
+              className="absolute right-4 md:right-8 p-3 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
+              aria-label="Next"
+            >
+              <ChevronRight size={40} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div >
   );
 };

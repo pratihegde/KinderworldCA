@@ -56,16 +56,6 @@ const WhyChooseUs = () => {
           >
             A Sanctuary Built <br /><span className="italic font-light text-primary-600">on Kindness</span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-primary-900/70 text-xl max-w-3xl mx-auto font-light leading-relaxed"
-          >
-            Discover the values that make our 300-acre retreat a world apart.
-            A place where ethical living and natural beauty meet.
-          </motion.p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">

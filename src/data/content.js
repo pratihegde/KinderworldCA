@@ -32,7 +32,7 @@ export const accommodations = [
   {
     id: 'glamp',
     name: 'Glamp Site',
-    subtitle: 'Luxury Camping Experience',
+    subtitle: 'Glamping Experience',
     capacity: 'Up to 4 guests',
     price: 'Contact for pricing',
     image: getAssetUrl('images/glampsite/FullSizeRender_3.jpg'),

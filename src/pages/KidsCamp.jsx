@@ -118,12 +118,9 @@ const KidsCamp = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <h1 className="text-5xl md:text-[10rem] font-sans leading-none mb-6 md:mb-12 tracking-tight">
+                        <h1 className="text-5xl md:text-7xl font-sans leading-none mb-6 md:mb-12 tracking-tight">
                             A <span className="font-bold">KIND</span>er World
                         </h1>
-                        <p className="text-lg md:text-3xl font-light max-w-3xl mx-auto opacity-95 leading-relaxed">
-                            Connecting children with nature through compassion, <br className="hidden md:block" /> adventure, and community.
-                        </p>
                     </motion.div>
                 </div>
             </section>

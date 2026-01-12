@@ -70,7 +70,8 @@ const Activities = () => {
         </>
       ),
       images: [
-        getAssetUrl('images/activities/sauna1.jpg')
+        getAssetUrl('images/activities/sauna1.jpg'),
+        getAssetUrl('images/activities/sauna2.jpg')
       ],
       features: ['Traditional Wood-Fired Heat', 'Lake Views', 'Cold Plunge Access', 'Detox & Relax']
     },
@@ -158,7 +159,8 @@ const Activities = () => {
         getAssetUrl('images/activities/paddle1.jpg'),
         getAssetUrl('images/activities/paddle2.jpg'),
         getAssetUrl('images/activities/paddle3.jpg'),
-        getAssetUrl('images/activities/paddle4.jpg')
+        getAssetUrl('images/activities/paddle4.jpg'),
+        getAssetUrl('images/activities/paddle5.jpg')
       ],
       features: ['Private Lake Access', 'Equipment Included', 'Sunrise Paddles', 'Team Building']
     }
