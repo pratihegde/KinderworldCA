@@ -4,7 +4,6 @@ import Hero from '../components/home/Hero';
 import Accommodations from '../components/home/Accommodations';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import KidsCampCTA from '../components/home/KidsCampCTA';
-import Testimonials from '../components/home/Testimonials';
 
 const Home = () => {
   const sectionVariants = {
@@ -45,15 +44,6 @@ const Home = () => {
         variants={sectionVariants}
       >
         <WhyChooseUs />
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-      >
-        <Testimonials />
       </motion.div>
     </div>
   );

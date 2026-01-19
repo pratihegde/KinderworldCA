@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Users, Droplets, Zap, Check, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Button from '../components/common/Button';
 import { getAssetUrl } from '../utils/getAssetUrl';
+import Testimonials from '../components/home/Testimonials';
 
 const Bunkie = () => {
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -59,8 +60,10 @@ const Bunkie = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">The Bunkie</h1>
-            <p className="text-2xl mb-8">Cozy Off-Grid Cabin</p>
+            <h1 className="text-5xl md:text-7xl font-serif font-light mb-4 text-white">
+              The <span className="italic text-accent-100 italic-font">Bunkie</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 font-light italic opacity-90">Cozy Off-Grid Cabin</p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Users size={18} />
@@ -235,6 +238,8 @@ const Bunkie = () => {
               ))}
             </div>
           </motion.div>
+
+          <Testimonials />
 
           {/* CTA */}
           <motion.div

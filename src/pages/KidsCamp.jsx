@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Calendar, Users, Heart, Camera, MapPin, Sparkles, X } from 'lucide-react';
+import { Calendar, Users, Heart, Camera, MapPin, Sparkles, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { getAssetUrl } from '../utils/getAssetUrl';
 import Button from '../components/common/Button';
+import { campTestimonials } from '../data/content';
 
 const GalleryCard = ({ image, onClick }) => (
     <motion.div
@@ -18,12 +19,6 @@ const GalleryCard = ({ image, onClick }) => (
             className="w-full h-auto block transition-transform duration-1000 group-hover:scale-[1.05]"
             loading="lazy"
         />
-        <div className="absolute inset-0 bg-primary-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-[2px] flex flex-col justify-end p-8">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-1">{image.alt}</p>
-                <div className="h-0.5 w-8 bg-accent-100 rounded-full" />
-            </div>
-        </div>
     </motion.div>
 );
 
@@ -34,7 +29,7 @@ const KidsCamp = () => {
     // All available local images for the gallery
     const campImages = [
         { src: getAssetUrl('images/kidscamp/group.jpg'), alt: 'Campers Group' },
-        { src: getAssetUrl('images/kidscamp/Yoga on dock-02.jpg'), alt: 'Group Hug on the Dock' },
+        { src: getAssetUrl('images/kidscamp/yockondock02.jpg'), alt: 'Group Hug on the Dock' },
         { src: getAssetUrl('images/kidscamp/3girls.jpg'), alt: 'Best Friends' },
         { src: getAssetUrl('images/kidscamp/3_girls_in_woods.jpg'), alt: 'Forest Exploration' },
         { src: getAssetUrl('images/kidscamp/boards.jpg'), alt: 'Paddle Boarding' },
@@ -52,7 +47,6 @@ const KidsCamp = () => {
         { src: getAssetUrl('images/kidscamp/rowboat.jpg'), alt: 'Boat Trip' },
         { src: getAssetUrl('images/kidscamp/summer.jpg'), alt: 'Summer Sun' },
         { src: getAssetUrl('images/kidscamp/table.jpg'), alt: 'Art & Crafts' },
-        { src: getAssetUrl('images/kidscamp/camp.jpg'), alt: 'Campfire Magic' },
         { src: getAssetUrl('images/kidscamp/chloseandattica.jpg'), alt: 'Puppy Love' },
         { src: getAssetUrl('images/kidscamp/KinderCamp2024-22.jpg'), alt: 'Wilderness Adventure' },
         { src: getAssetUrl('images/kidscamp/boys.jpg'), alt: 'Camp Friends' },
@@ -62,25 +56,29 @@ const KidsCamp = () => {
         { src: getAssetUrl('images/kidscamp/IMG_0729.jpg'), alt: 'Canoe Adventure' },
         { src: getAssetUrl('images/kidscamp/IMG_1726.jpg'), alt: 'Sunny Days' },
         { src: getAssetUrl('images/kidscamp/IMG_2836_2.jpg'), alt: 'Candid Moments' },
+        { src: getAssetUrl('images/kidscamp/IMG_2907.jpg'), alt: 'Paddle Fun' },
         { src: getAssetUrl('images/kidscamp/IMG_2920.jpg'), alt: 'Paddle Love' },
+        { src: getAssetUrl('images/kidscamp/IMG_3135_(1).jpg'), alt: 'Summer Fun' },
+        { src: getAssetUrl('images/kidscamp/IMG_3141_2.jpg'), alt: 'Camp Memories' },
+        { src: getAssetUrl('images/kidscamp/IMG_3159.jpg'), alt: 'Smiles' },
+        { src: getAssetUrl('images/kidscamp/IMG_3427_2.jpg'), alt: 'Summer Days' },
         { src: getAssetUrl('images/kidscamp/jess.jpg'), alt: 'Staff Members' },
         { src: getAssetUrl('images/kidscamp/Jumping rock-07.jpg'), alt: 'Lake Fun' },
         { src: getAssetUrl('images/kidscamp/macgrouphug.jpg'), alt: 'Big Hug' },
         { src: getAssetUrl('images/kidscamp/Yoga on dock-06.jpg'), alt: 'Best Friends' },
         { src: getAssetUrl('images/kidscamp/Yoga on dock-07.jpg'), alt: 'Mindful Morning' },
-        { src: getAssetUrl('images/kidscamp/kidscamp2.jpg'), alt: 'Summer Vibes' },
+        { src: getAssetUrl('images/kidscamp/Kinder Camp2024-16.jpg'), alt: 'Kinder Camp 2024' },
     ];
 
     // Horizontal images for the top hero backgrounds
     const heroBackgrounds = [
-        getAssetUrl('images/kidscamp/IMG_3141_2.jpg'),
-        getAssetUrl('images/kidscamp/boards.jpg'),
-        getAssetUrl('images/kidscamp/IMG_3427_2.jpg'),
+        getAssetUrl('images/kidscamp/IMG_1277.jpg'),
+        getAssetUrl('images/kidscamp/jump.jpg'),
+        getAssetUrl('images/kidscamp/yockondock02.jpg'),
+        getAssetUrl('images/kidscamp/yogaondock.jpg'),
         getAssetUrl('images/kidscamp/IMG_3159.jpg'),
-        getAssetUrl('images/kidscamp/IMG_2920.jpg'),
-        getAssetUrl('images/kidscamp/paddle.jpg'),
-        getAssetUrl('images/kidscamp/Yoga on dock-02.jpg'),
-        getAssetUrl('images/kidscamp/Hike-05.jpg')
+        getAssetUrl('images/kidscamp/whiteshirt.jpg'),
+        getAssetUrl('images/kidscamp/IMG_2907.jpg')
     ];
 
     React.useEffect(() => {
@@ -93,7 +91,7 @@ const KidsCamp = () => {
     return (
         <div className="min-h-screen bg-[#F3E8D8]">
             {/* Hero Section - Full Cover */}
-            <section className="relative h-[80vh] md:h-[85vh] overflow-hidden flex items-center justify-center bg-black">
+            <section className="relative h-[70vh] md:h-[75vh] overflow-hidden flex items-center justify-center bg-black">
                 <AnimatePresence initial={false}>
                     <motion.div
                         key={heroImgIndex}
@@ -104,7 +102,7 @@ const KidsCamp = () => {
                         className="absolute inset-0"
                     >
                         <div
-                            className="absolute inset-0 bg-cover bg-center transition-transform duration-[4000ms] ease-linear scale-110"
+                            className="absolute inset-0 bg-cover bg-[center_20%] transition-transform duration-[4000ms] ease-linear"
                             style={{ backgroundImage: `url(${heroBackgrounds[heroImgIndex]})` }}
                         >
                             <div className="absolute inset-0 bg-black/20" />
@@ -118,9 +116,12 @@ const KidsCamp = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <h1 className="text-5xl md:text-7xl font-sans leading-none mb-6 md:mb-12 tracking-tight">
-                            A <span className="font-bold">KIND</span>er World
+                        <h1 className="text-5xl md:text-7xl font-serif font-light leading-none mb-6 tracking-tight">
+                            <span className="font-bold">KIND</span>er <span className="italic text-accent-100 italic-font">Camp</span>
                         </h1>
+                        <p className="text-xl md:text-2xl font-light tracking-wide opacity-90 italic">
+                            where lifelong <span className="italic-font">memories</span> are made
+                        </p>
                     </motion.div>
                 </div>
             </section>
@@ -159,10 +160,6 @@ const KidsCamp = () => {
                                 alt={selectedImg.alt}
                                 className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/10"
                             />
-                            <div className="absolute bottom-8 left-0 w-full text-center">
-                                <p className="text-white text-xs font-bold uppercase tracking-[0.4em] mb-2">{selectedImg.alt}</p>
-                                <div className="h-0.5 w-16 bg-red-600 mx-auto rounded-full" />
-                            </div>
                         </motion.div>
                     </motion.div>
                 )}
@@ -207,15 +204,7 @@ const KidsCamp = () => {
             <section className="py-32 bg-[#7A746C] overflow-hidden relative">
                 <div className="container-custom relative z-10">
                     <div className="text-center mb-32">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            className="inline-flex items-center space-x-4 mb-8 bg-white/10 backdrop-blur-sm px-8 py-2 rounded-full text-white/80 border border-white/20"
-                        >
-                            <Camera size={20} className="text-red-300" />
-                            <span className="text-xs font-bold uppercase tracking-[0.4em]">Memories</span>
-                        </motion.div>
+
                         <motion.h2
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -247,7 +236,7 @@ const KidsCamp = () => {
                             {/* Column 1 */}
                             <div className="scroll-column relative h-full">
                                 <div className="animate-scroll-slow space-y-8 pt-8">
-                                    {[...campImages, ...campImages].map((img, idx) => (
+                                    {[...campImages.filter((_, i) => i % 3 === 0), ...campImages.filter((_, i) => i % 3 === 0)].map((img, idx) => (
                                         <GalleryCard key={`col1-${idx}`} image={img} onClick={setSelectedImg} />
                                     ))}
                                 </div>
@@ -256,7 +245,7 @@ const KidsCamp = () => {
                             {/* Column 2 */}
                             <div className="scroll-column relative h-full hidden md:block">
                                 <div className="animate-scroll-medium space-y-8 pt-16">
-                                    {[...campImages.slice().reverse(), ...campImages.slice().reverse()].map((img, idx) => (
+                                    {[...campImages.filter((_, i) => i % 3 === 1).reverse(), ...campImages.filter((_, i) => i % 3 === 1).reverse()].map((img, idx) => (
                                         <GalleryCard key={`col2-${idx}`} image={img} onClick={setSelectedImg} />
                                     ))}
                                 </div>
@@ -265,7 +254,7 @@ const KidsCamp = () => {
                             {/* Column 3 */}
                             <div className="scroll-column relative h-full hidden lg:block">
                                 <div className="animate-scroll-fast space-y-8 pt-4">
-                                    {[...campImages, ...campImages].map((img, idx) => (
+                                    {[...campImages.filter((_, i) => i % 3 === 2), ...campImages.filter((_, i) => i % 3 === 2)].map((img, idx) => (
                                         <GalleryCard key={`col3-${idx}`} image={img} onClick={setSelectedImg} />
                                     ))}
                                 </div>
@@ -275,6 +264,61 @@ const KidsCamp = () => {
                         {/* Top & Bottom Gradient Fades */}
                         <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#7A746C] via-[#7A746C]/80 to-transparent pointer-events-none z-10" />
                         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#7A746C] via-[#7A746C]/80 to-transparent pointer-events-none z-10" />
+                    </div>
+                </div>
+            </section>
+
+            {/* Highlights Section */}
+            <section className="py-24 md:py-32 bg-[#F3E8D8]">
+                <div className="container-custom max-w-6xl">
+                    <div className="text-center mb-20">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            className="inline-block px-6 py-2 border-2 border-primary-600/30 rounded-full text-primary-700 text-xs uppercase tracking-[0.4em] font-bold mb-8"
+                        >
+                            What Makes Camp Special
+                        </motion.div>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-5xl md:text-7xl font-serif font-bold text-primary-950 mb-8 leading-tight"
+                        >
+                            Camp <span className="italic font-light text-primary-600">Highlights</span>
+                        </motion.h2>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        {[
+                            { icon: Heart, title: 'Compassionate Community', desc: 'Connect with like-minded vegan children in a supportive environment.' },
+                            { icon: Users, title: 'Nature Connection', desc: 'Explore pristine wilderness and develop a deep bond with the natural world.' },
+                            { icon: Sparkles, title: 'Creative Expression', desc: 'Engage in arts, crafts, and activities that inspire imagination.' },
+                            { icon: Camera, title: 'Outdoor Adventures', desc: 'Paddleboarding, hiking, swimming, and wilderness exploration.' },
+                            { icon: MapPin, title: 'Mindfulness Practices', desc: 'Yoga, meditation, and sound healing in nature.' },
+                            { icon: Calendar, title: 'Lifelong Friendships', desc: 'Build lasting bonds with campers who share your values.' }
+                        ].map((highlight, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1, duration: 0.8, ease: "easeOut" }}
+                                whileHover={{ y: -12, transition: { duration: 0.4 } }}
+                                className="bg-white p-12 rounded-[48px] shadow-xl shadow-primary-900/5 hover:shadow-2xl hover:shadow-primary-900/10 transition-all duration-500 group border border-white"
+                            >
+                                <div className="mb-10 p-6 bg-primary-50 rounded-[24px] text-primary-600 w-fit group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 transform group-hover:scale-110">
+                                    <highlight.icon className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary-950 mb-5 group-hover:text-primary-700 transition-colors">
+                                    {highlight.title}
+                                </h3>
+                                <p className="text-primary-800/80 text-lg leading-relaxed font-light">
+                                    {highlight.desc}
+                                </p>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -344,6 +388,108 @@ const KidsCamp = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Testimonials Section - Carousel Style */}
+            <section className="py-24 bg-white border-t border-primary-100 overflow-hidden">
+                <div className="container-custom">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl md:text-6xl font-serif font-light italic text-primary-900 mb-4">
+                            What our campers had to say
+                        </h2>
+                        <div className="h-1 w-20 bg-primary-200 mx-auto rounded-full" />
+                    </motion.div>
+
+                    <CampReviewsCarousel reviews={campTestimonials} />
+                </div>
+            </section>
+        </div>
+    );
+};
+
+// Component for the Camp reviews carousel
+const CampReviewsCarousel = ({ reviews }) => {
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const reviewsPerPage = 1; // Default for mobile
+    const [displayPerPage, setDisplayPerPage] = React.useState(3);
+
+    const maxIndex = Math.ceil(reviews.length / displayPerPage) - 1;
+
+    const nextSlide = () => {
+        setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+    };
+
+    return (
+        <div className="relative group px-4 md:px-12">
+            <div className="overflow-hidden">
+                <motion.div
+                    animate={{ x: `-${currentIndex * 100}%` }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="flex"
+                >
+                    {[...Array(Math.ceil(reviews.length / displayPerPage))].map((_, pageIndex) => (
+                        <div key={pageIndex} className="flex-shrink-0 w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {reviews.slice(pageIndex * displayPerPage, (pageIndex + 1) * displayPerPage).map((review, idx) => (
+                                <div
+                                    key={idx}
+                                    className="h-full"
+                                >
+                                    <div className="bg-primary-50/50 p-8 rounded-[2.5rem] h-full flex flex-col justify-between border border-primary-100/30 hover:bg-white transition-all duration-500 shadow-sm hover:shadow-xl">
+                                        <div>
+                                            <div className="mb-6">
+                                                <Heart size={24} className="text-primary-400 fill-primary-400 opacity-30" />
+                                            </div>
+                                            <p className="text-primary-900/80 text-lg leading-relaxed font-light italic mb-8">
+                                                "{review.text}"
+                                            </p>
+                                        </div>
+                                        <div className="pt-6 border-t border-primary-100/50">
+                                            <p className="font-bold text-primary-900 tracking-tight">- {review.author}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                </motion.div>
+            </div>
+
+            {/* Navigation Arrows */}
+            {maxIndex > 0 && (
+                <>
+                    <button
+                        onClick={prevSlide}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white shadow-xl text-primary-900 hover:bg-primary-50 transition-all border border-primary-100 z-10 hidden md:flex"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button
+                        onClick={nextSlide}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white shadow-xl text-primary-900 hover:bg-primary-50 transition-all border border-primary-100 z-10 hidden md:flex"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+
+                    {/* Pagination Dots */}
+                    <div className="flex justify-center space-x-2 mt-12">
+                        {[...Array(maxIndex + 1)].map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setCurrentIndex(i)}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${currentIndex === i ? 'w-8 bg-primary-600' : 'w-2 bg-primary-200'}`}
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
         </div>
     );
 };

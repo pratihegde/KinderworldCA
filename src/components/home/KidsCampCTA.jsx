@@ -23,7 +23,7 @@ const KidsCampCTA = () => {
                                 {/* Image Side */}
                                 <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[500px] overflow-hidden">
                                     <img
-                                        src={getAssetUrl('images/kidscamp/Yoga on dock-02.jpg')}
+                                        src={getAssetUrl('images/kidscamp/yockondock02.jpg')}
                                         alt="Vegan Kids Camp Group"
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
                                     />

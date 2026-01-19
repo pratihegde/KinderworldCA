@@ -10,12 +10,15 @@ import Activities from './pages/Activities';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
+import ScrollToTop from './components/common/ScrollToTop';
+
 function App() {
   // Match vite.config.js - no basename in development
   const basename = import.meta.env.PROD ? '/KinderworldCA' : '';
 
   return (
     <Router basename={basename}>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

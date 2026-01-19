@@ -159,3 +159,33 @@ export const whyChooseUs = [
     description: 'Compassion and kindness guide everything we do'
   }
 ];
+export const campTestimonials = [
+  {
+    text: "I had the best week of my life and can’t wait to go back!",
+    author: "Camper, age 9"
+  },
+  {
+    text: "I was shy at first but it was very very fun! Everyone was welcoming and made me feel like part of a family. It was the best camp ever!! ❤️❤️❤️",
+    author: "Camper, age 12"
+  },
+  {
+    text: "I love PADDLE BOARDING and swimming. The food was very good. It was very nice that everybody else was vegan.",
+    author: "Camper, age 11"
+  },
+  {
+    text: "An absolutely wonderful experience for a city kid to connect with nature and feel fully himself amongst all vegan peers, counsellors and hosts! We are endlessly grateful for all the hard work that made this incredible experience possible for the amazing group of kids who formed a lasting and much needed bond to help them through in the non-vegan world they all had to return to.",
+    author: "Parent of Camper"
+  },
+  {
+    text: "Kinder world vegan camp is different from other camps because not only did it feel like a camp but it felt like a community. Actually a supporting family!",
+    author: "Camper, age 13"
+  },
+  {
+    text: "Spectacular location, caring counsellors, fun in the outdoors, awesome kids, delicious food. 5/5 stars! I can't wait to do it again.",
+    author: "Camper, age 13"
+  },
+  {
+    text: "I love KINDer world camp I want to go back next year and the next next year.",
+    author: "Camper, age 11"
+  }
+];

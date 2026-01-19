@@ -99,6 +99,7 @@ const Activities = () => {
       images: [
         getAssetUrl('images/activities/forestbathing1.jpg'),
         getAssetUrl('images/activities/forestbathing2.jpg'),
+        getAssetUrl('images/activities/forestbathing3.jpg'),
         getAssetUrl('images/activities/forestbathing4.jpg'),
         getAssetUrl('images/activities/forestbathing5.jpg')
       ],
@@ -130,7 +131,8 @@ const Activities = () => {
         getAssetUrl('images/activities/hiking2.jpg'),
         getAssetUrl('images/activities/hiking3.jpg'),
         getAssetUrl('images/activities/hiking4.jpg'),
-        getAssetUrl('images/activities/hiking5.jpg')
+        getAssetUrl('images/activities/hiking5.jpg'),
+        getAssetUrl('images/activities/hiking6.jpg')
       ],
       features: ['Private Wilderness Trails', 'Canadian Shield Terrain', 'Wildlife Viewing', 'Scenic Viewpoints']
     },
@@ -160,7 +162,10 @@ const Activities = () => {
         getAssetUrl('images/activities/paddle2.jpg'),
         getAssetUrl('images/activities/paddle3.jpg'),
         getAssetUrl('images/activities/paddle4.jpg'),
-        getAssetUrl('images/activities/paddle5.jpg')
+        getAssetUrl('images/activities/paddle5.jpg'),
+        getAssetUrl('images/activities/paddle6.jpg'),
+        getAssetUrl('images/activities/paddle7.jpg'),
+        getAssetUrl('images/activities/paddle8.jpg')
       ],
       features: ['Private Lake Access', 'Equipment Included', 'Sunrise Paddles', 'Team Building']
     }
@@ -169,7 +174,7 @@ const Activities = () => {
   return (
     <div className="min-h-screen bg-[#FDFBF7]">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <motion.div
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -197,9 +202,9 @@ const Activities = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl font-light tracking-wide max-w-2xl mx-auto"
+            className="text-xl md:text-3xl font-light tracking-wide max-w-3xl mx-auto"
           >
-            Reconnect with nature through our curated experiences
+            Moments in nature, made meaningful
           </motion.p>
         </div>
       </section>
@@ -303,7 +308,7 @@ const Activities = () => {
               <h3 className="text-2xl font-serif italic mb-8 text-center text-accent-100">A Sustainable Retreat Space</h3>
               <ul className="space-y-6">
                 {[
-                  { title: 'Outdoor Kitchen', desc: 'Cook and share meals in a communal, nature-immersed setting.' },
+                  { title: 'Screened-in kitchen', desc: 'Cook and share meals in a communal, nature-immersed setting.' },
                   { title: 'Cozy sleeping arrangements', desc: 'Experience tent camping under a canopy of stars.' },
                   { title: 'Eco-friendly amenities', desc: 'Including compost toilets for a low-impact stay.' },
                   { title: 'Direct lake access', desc: 'Swim, paddle, or simply soak in the serenity.' },
@@ -326,6 +331,46 @@ const Activities = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* Workshop & Retreat Slideshow */}
+        <div className="container-custom max-w-6xl mt-24 pb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h3 className="text-3xl font-serif italic mb-2 text-primary-200">Workshop & Retreat Gallery</h3>
+            <div className="h-0.5 w-16 bg-accent-100 mx-auto rounded-full" />
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            {/* Slideshow Side */}
+            <div className="relative group">
+              <div className="overflow-hidden rounded-[2.5rem] shadow-2xl aspect-[4/5] border-8 border-white relative z-10">
+                <Slideshow images={[
+                  getAssetUrl('images/activities/workshop1.jpg'),
+                  getAssetUrl('images/activities/workshop2.jpg'),
+                  getAssetUrl('images/activities/workshop3.jpg'),
+                  getAssetUrl('images/activities/retreat1 (1).jpg'),
+                  getAssetUrl('images/activities/retreat1 (4).jpg'),
+                  getAssetUrl('images/kidscamp/boards.jpg')
+                ]} />
+              </div>
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-100/30 rounded-full blur-3xl -z-10" />
+            </div>
+
+            {/* Description Side */}
+            <div className="space-y-6 text-white/90 font-light leading-relaxed">
+              <p className="text-lg">
+                Our workshops and retreats bring together communities focused on wellness, mindfulness, and connection with nature. From yoga sessions on the dock to paddleboard workshops and team-building activities, each experience is designed to inspire and rejuvenate.
+              </p>
+              <p className="text-lg">
+                Whether you're hosting a meditation retreat, a wellness workshop, or a nature-based team training, our sanctuary provides the perfect backdrop for transformation and growth.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

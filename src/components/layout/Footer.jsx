@@ -1,9 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { Facebook, Instagram, Mail, MapPin } from 'lucide-react';
 import { siteInfo } from '../../data/content';
 
 const Footer = () => {
+  const activeStyle = "text-accent-100 font-bold";
+  const baseStyle = "text-white/80 hover:text-white transition-colors duration-300 flex items-center";
+
   return (
     <footer className="text-white pt-20 pb-10" style={{ backgroundColor: '#7A746C' }}>
       <div className="container-custom px-4">
@@ -28,18 +30,18 @@ const Footer = () => {
             <div>
               <h4 className="text-accent-100 text-sm font-bold uppercase tracking-widest mb-6">Explore</h4>
               <ul className="space-y-4 text-base font-medium">
-                <li><Link to="/" className="text-white/80 hover:text-white transition-colors">Home</Link></li>
-                <li><Link to="/our-story" className="text-white/80 hover:text-white transition-colors">Our Story</Link></li>
-                <li><Link to="/gallery" className="text-white/80 hover:text-white transition-colors">Gallery</Link></li>
-                <li><Link to="/contact" className="text-white/80 hover:text-white transition-colors">Contact</Link></li>
+                <li><NavLink to="/" className={({ isActive }) => isActive ? `${baseStyle} ${activeStyle}` : baseStyle}>Home</NavLink></li>
+                <li><NavLink to="/our-story" className={({ isActive }) => isActive ? `${baseStyle} ${activeStyle}` : baseStyle}>Our Story</NavLink></li>
+                <li><NavLink to="/gallery" className={({ isActive }) => isActive ? `${baseStyle} ${activeStyle}` : baseStyle}>Gallery</NavLink></li>
+                <li><NavLink to="/contact" className={({ isActive }) => isActive ? `${baseStyle} ${activeStyle}` : baseStyle}>Contact</NavLink></li>
               </ul>
             </div>
             <div>
               <h4 className="text-accent-100 text-sm font-bold uppercase tracking-widest mb-6">Stay</h4>
               <ul className="space-y-4 text-base font-medium">
-                <li><Link to="/bunkie" className="text-white/80 hover:text-white transition-colors">The Bunkie</Link></li>
-                <li><Link to="/glamp-site" className="text-white/80 hover:text-white transition-colors">Glamp Site</Link></li>
-                <li><Link to="/kids-camp" className="text-white/80 hover:text-white transition-colors">Kids Camp</Link></li>
+                <li><NavLink to="/bunkie" className={({ isActive }) => isActive ? `${baseStyle} ${activeStyle}` : baseStyle}>The Bunkie</NavLink></li>
+                <li><NavLink to="/glamp-site" className={({ isActive }) => isActive ? `${baseStyle} ${activeStyle}` : baseStyle}>Glamp Site</NavLink></li>
+                <li><NavLink to="/kids-camp" className={({ isActive }) => isActive ? `${baseStyle} ${activeStyle}` : baseStyle}>Kids Camp</NavLink></li>
               </ul>
             </div>
           </div>
@@ -54,7 +56,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center space-x-3 text-base text-white/80">
                 <MapPin size={18} className="text-accent-100 flex-shrink-0" />
-                <span>Private Property situated conveniently between Toronto and Montreal.</span>
+                <span>Private property situated conveniently between Toronto and Montreal.</span>
               </div>
             </div>
             <div className="flex space-x-5 pt-4">

@@ -59,12 +59,11 @@ const Header = () => {
             <div className="flex justify-between items-center relative">
               {/* Logo - Left Side - Fitted to nav */}
               <Link to="/" className="flex items-center space-x-3 md:space-x-5 group">
-                <div className="relative flex-shrink-0">
+                <div className={`relative flex-shrink-0 overflow-hidden rounded-full transition-all duration-500 shadow-xl ${isScrolled ? 'h-14 w-14' : 'h-16 w-16 md:h-20 md:w-20'}`}>
                   <img
                     src={getAssetUrl('images/logo.jpg')}
                     alt="Kinder World Logo"
-                    className={`transition-all duration-500 rounded-full ${isScrolled ? 'h-14 w-14' : 'h-16 w-16 md:h-20 md:w-20'
-                      } object-contain border-2 border-white/20 shadow-xl`}
+                    className="w-full h-full object-cover scale-[1.8] object-[center_55%] transition-transform duration-500"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -85,10 +84,13 @@ const Header = () => {
                   <div key={link.name} className="relative group/nav">
                     {link.hasDropdown ? (
                       <>
-                        <button className="flex items-center space-x-1 text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2 whitespace-nowrap">
+                        <Link
+                          to={link.links[0].path.split('#')[0]}
+                          className="flex items-center space-x-1 text-sm font-semibold text-white/90 hover:text-white uppercase tracking-widest transition-colors py-2 whitespace-nowrap"
+                        >
                           <span>{link.name}</span>
-                          <ChevronDown size={14} />
-                        </button>
+                          <ChevronDown size={14} className="group-hover/nav:rotate-180 transition-transform duration-300" />
+                        </Link>
                         <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-2xl py-4 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 transform translate-y-2 group-hover/nav:translate-y-0 border border-gray-100">
                           {link.links.map((sublink) => (
                             <Link

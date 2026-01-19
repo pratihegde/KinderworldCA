@@ -56,8 +56,10 @@ const GlampSite = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 font-serif">Glamp Site</h1>
-            <p className="text-xl md:text-2xl mb-8 font-light tracking-wide">
+            <h1 className="text-5xl md:text-7xl font-serif font-light mb-4 text-white">
+              Glamp <span className="italic text-accent-100 italic-font">Site</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 font-light tracking-wide italic opacity-90">
               A Peaceful Retreat for People, Animals and Nature
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
@@ -238,7 +240,7 @@ const GlampSite = () => {
                 <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-light mb-10 leading-relaxed">
                   We now open our sanctuary for you to host your own intimate retreats. Connect with us to learn how you can bring your community to this peaceful haven.
                 </p>
-                <Link to="/contact">
+                <Link to="/activities#workshops">
                   <Button className="bg-primary-600 hover:bg-primary-700 text-white px-10 py-4 text-lg font-bold shadow-xl hover:shadow-2xl">
                     Learn More About Hosting
                   </Button>

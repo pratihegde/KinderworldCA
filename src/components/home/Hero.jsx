@@ -10,24 +10,30 @@ const Hero = () => {
 
   const slides = [
     {
-      src: getAssetUrl('images/hero/hero6.jpg'),
-      title: "Reconnect with Nature"
+      src: getAssetUrl('images/hero/hero6.jpg'), // Deer
+      title: "Reconnect with ",
+      italic: "Nature"
+    },
+    {
+      src: getAssetUrl('images/hero/hero10.jpg'), // Winter scene (assuming hero10 is winter based on size and context)
+      title: "300 Acres of ",
+      italic: "Pristine Wilderness"
     },
     {
       src: getAssetUrl('images/hero/hero2.jpg'),
-      title: "A Sanctuary for all Species"
+      title: "A Sanctuary for ",
+      italic: "all Species"
     },
     {
       src: getAssetUrl('images/hero/hero9.jpg'),
-      title: "Live Gently. Tread Lightly"
+      title: "Live Gently. ",
+      italic: "Tread Lightly"
     },
     {
       src: getAssetUrl('images/hero/hero5.jpg'),
-      title: "A KINDer World Awaits"
-    },
-    {
-      src: getAssetUrl('images/hero/hero3.jpg'),
-      title: "300 Acres of Pristine Wilderness"
+      title: "A ",
+      italic: "KINDer World",
+      suffix: " Awaits"
     }
   ];
 
@@ -79,6 +85,12 @@ const Hero = () => {
                 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-white leading-[1.2] tracking-tight"
               >
                 {slides[currentSlide].title}
+                {slides[currentSlide].italic && (
+                  <span className="italic font-light text-accent-100">
+                    {slides[currentSlide].italic}
+                  </span>
+                )}
+                {slides[currentSlide].suffix}
               </motion.h1>
             </AnimatePresence>
           </div>

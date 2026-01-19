@@ -57,17 +57,17 @@ ${formData.message}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold mb-4"
+            className="text-5xl md:text-7xl font-serif font-light mb-4"
           >
-            Contact Us
+            Contact <span className="italic text-accent-100 italic-font">Us</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl"
+            className="text-xl md:text-2xl font-light italic opacity-90"
           >
-            We Can't Wait To Welcome You
+            We Can't Wait To <span className="italic-font">Welcome You</span>
           </motion.p>
         </div>
       </section>
@@ -94,9 +94,6 @@ ${formData.message}
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
                     <p className="text-gray-600">{siteInfo.location}</p>
-                    <p className="text-sm text-gray-500 mt-1">
-                      Exact address provided upon booking
-                    </p>
                   </div>
                 </div>
 
