@@ -10,12 +10,13 @@ const Hero = () => {
 
   const slides = [
     {
-      src: getAssetUrl('images/hero/hero6.jpg'), // Deer
-      title: "Reconnect with ",
-      italic: "Nature"
+      src: getAssetUrl('images/hero/hero5.jpg'), // Deer
+      title: "A ",
+      italic: "KINDer World",
+      suffix: " Awaits"
     },
     {
-      src: getAssetUrl('images/hero/hero10.jpg'), // Winter scene (assuming hero10 is winter based on size and context)
+      src: getAssetUrl('images/hero/hero10.jpg'),
       title: "300 Acres of ",
       italic: "Pristine Wilderness"
     },
@@ -30,10 +31,9 @@ const Hero = () => {
       italic: "Tread Lightly"
     },
     {
-      src: getAssetUrl('images/hero/hero5.jpg'),
-      title: "A ",
-      italic: "KINDer World",
-      suffix: " Awaits"
+      src: getAssetUrl('images/hero/hero6.jpg'),
+      title: "Reconnect with ",
+      italic: "Nature"
     }
   ];
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Calendar, Users, Heart, Camera, MapPin, Sparkles, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, Users, Heart, Camera, MapPin, Sparkles, X, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { getAssetUrl } from '../utils/getAssetUrl';
 import Button from '../components/common/Button';
 import { campTestimonials } from '../data/content';
@@ -73,12 +73,14 @@ const KidsCamp = () => {
     // Horizontal images for the top hero backgrounds
     const heroBackgrounds = [
         getAssetUrl('images/kidscamp/IMG_1277.jpg'),
-        getAssetUrl('images/kidscamp/jump.jpg'),
         getAssetUrl('images/kidscamp/yockondock02.jpg'),
         getAssetUrl('images/kidscamp/yogaondock.jpg'),
         getAssetUrl('images/kidscamp/IMG_3159.jpg'),
         getAssetUrl('images/kidscamp/whiteshirt.jpg'),
-        getAssetUrl('images/kidscamp/IMG_2907.jpg')
+        getAssetUrl('images/kidscamp/banner1.jpg'),
+        getAssetUrl('images/kidscamp/banner2.jpg'),
+        getAssetUrl('images/kidscamp/banner3.jpg'),
+        getAssetUrl('images/kidscamp/banner4.jpg')
     ];
 
     React.useEffect(() => {
@@ -90,8 +92,12 @@ const KidsCamp = () => {
 
     return (
         <div className="min-h-screen bg-[#F3E8D8]">
-            {/* Hero Section - Full Cover */}
-            <section className="relative h-[70vh] md:h-[75vh] overflow-hidden flex items-center justify-center bg-black">
+            {/* Hero Section - Full Cover 
+                To adjust the "zoom" (cropping), change the height classes below:
+                - h-[65vh]: Height on mobile
+                - md:h-[85vh]: Height on desktop (increase to see more of the image verticaly, decrease to crop more)
+            */}
+            <section className="relative h-[65vh] md:h-[95vh] overflow-hidden flex items-center justify-center bg-black">
                 <AnimatePresence initial={false}>
                     <motion.div
                         key={heroImgIndex}
@@ -102,7 +108,8 @@ const KidsCamp = () => {
                         className="absolute inset-0"
                     >
                         <div
-                            className="absolute inset-0 bg-cover bg-[center_20%] transition-transform duration-[4000ms] ease-linear"
+                            // bg-center positions the image. Try 'bg-[center_top]' or 'bg-[center_30%]' to shift focus up/down
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-[4000ms] ease-linear"
                             style={{ backgroundImage: `url(${heroBackgrounds[heroImgIndex]})` }}
                         >
                             <div className="absolute inset-0 bg-black/20" />
@@ -166,7 +173,7 @@ const KidsCamp = () => {
             </AnimatePresence>
 
             {/* Stats/Info Section */}
-            <section className="py-20 bg-white/80 backdrop-blur-md relative z-20 border-b border-primary-100">
+            <section className="py-20 bg-white relative z-20 border-b border-primary-100">
                 <div className="container-custom">
                     <div className="flex flex-wrap justify-center gap-12 md:gap-32">
                         <div className="flex items-center space-x-6 text-primary-900">
@@ -269,14 +276,14 @@ const KidsCamp = () => {
             </section>
 
             {/* Highlights Section */}
-            <section className="py-24 md:py-32 bg-[#F3E8D8]">
-                <div className="container-custom max-w-6xl">
-                    <div className="text-center mb-20">
+            <section className="py-16 md:py-20 bg-[#F3E8D8]">
+                <div className="container-custom max-w-5xl">
+                    <div className="text-center mb-12">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="inline-block px-6 py-2 border-2 border-primary-600/30 rounded-full text-primary-700 text-xs uppercase tracking-[0.4em] font-bold mb-8"
+                            className="inline-block px-6 py-2 border-2 border-primary-600/30 rounded-full text-primary-700 text-xs uppercase tracking-[0.4em] font-bold mb-6"
                         >
                             What Makes Camp Special
                         </motion.div>
@@ -284,37 +291,37 @@ const KidsCamp = () => {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-5xl md:text-7xl font-serif font-bold text-primary-950 mb-8 leading-tight"
+                            className="text-4xl md:text-5xl font-serif font-bold text-primary-950 mb-6 leading-tight"
                         >
                             Camp <span className="italic font-light text-primary-600">Highlights</span>
                         </motion.h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { icon: Heart, title: 'Compassionate Community', desc: 'Connect with like-minded vegan children in a supportive environment.' },
-                            { icon: Users, title: 'Nature Connection', desc: 'Explore pristine wilderness and develop a deep bond with the natural world.' },
-                            { icon: Sparkles, title: 'Creative Expression', desc: 'Engage in arts, crafts, and activities that inspire imagination.' },
-                            { icon: Camera, title: 'Outdoor Adventures', desc: 'Paddleboarding, hiking, swimming, and wilderness exploration.' },
-                            { icon: MapPin, title: 'Mindfulness Practices', desc: 'Yoga, meditation, and sound healing in nature.' },
-                            { icon: Calendar, title: 'Lifelong Friendships', desc: 'Build lasting bonds with campers who share your values.' }
+                            { icon: Heart, title: 'Compassionate Community', desc: 'Connect with like-minded vegan children.' },
+                            { icon: Users, title: 'Nature Connection', desc: 'Explore pristine wilderness and bond with nature.' },
+                            { icon: Sparkles, title: 'Creative Expression', desc: 'Arts, crafts, and imaginative activities.' },
+                            { icon: Camera, title: 'Outdoor Adventures', desc: 'Paddleboarding, hiking, and swimming.' },
+                            { icon: MapPin, title: 'Mindfulness Practices', desc: 'Yoga, meditation, and sound healing.' },
+                            { icon: Calendar, title: 'Lifelong Friendships', desc: 'Build lasting bonds with fellow campers.' }
                         ].map((highlight, idx) => (
                             <motion.div
                                 key={idx}
-                                initial={{ opacity: 0, y: 30 }}
+                                initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1, duration: 0.8, ease: "easeOut" }}
-                                whileHover={{ y: -12, transition: { duration: 0.4 } }}
-                                className="bg-white p-12 rounded-[48px] shadow-xl shadow-primary-900/5 hover:shadow-2xl hover:shadow-primary-900/10 transition-all duration-500 group border border-white"
+                                transition={{ delay: idx * 0.08, duration: 0.6, ease: "easeOut" }}
+                                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                                className="bg-white p-6 md:p-8 rounded-[32px] shadow-lg shadow-primary-900/5 hover:shadow-xl hover:shadow-primary-900/10 transition-all duration-500 group border border-white"
                             >
-                                <div className="mb-10 p-6 bg-primary-50 rounded-[24px] text-primary-600 w-fit group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 transform group-hover:scale-110">
-                                    <highlight.icon className="w-8 h-8" />
+                                <div className="mb-6 p-4 bg-primary-50 rounded-[20px] text-primary-600 w-fit group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 transform group-hover:scale-110">
+                                    <highlight.icon className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary-950 mb-5 group-hover:text-primary-700 transition-colors">
+                                <h3 className="text-lg md:text-xl font-serif font-bold text-primary-950 mb-3 group-hover:text-primary-700 transition-colors">
                                     {highlight.title}
                                 </h3>
-                                <p className="text-primary-800/80 text-lg leading-relaxed font-light">
+                                <p className="text-primary-800/80 text-sm md:text-base leading-relaxed font-light">
                                     {highlight.desc}
                                 </p>
                             </motion.div>
@@ -437,26 +444,32 @@ const CampReviewsCarousel = ({ reviews }) => {
                 >
                     {[...Array(Math.ceil(reviews.length / displayPerPage))].map((_, pageIndex) => (
                         <div key={pageIndex} className="flex-shrink-0 w-full grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {reviews.slice(pageIndex * displayPerPage, (pageIndex + 1) * displayPerPage).map((review, idx) => (
-                                <div
-                                    key={idx}
-                                    className="h-full"
-                                >
-                                    <div className="bg-primary-50/50 p-8 rounded-[2.5rem] h-full flex flex-col justify-between border border-primary-100/30 hover:bg-white transition-all duration-500 shadow-sm hover:shadow-xl">
-                                        <div>
-                                            <div className="mb-6">
-                                                <Heart size={24} className="text-primary-400 fill-primary-400 opacity-30" />
+                            {reviews.slice(pageIndex * displayPerPage, (pageIndex + 1) * displayPerPage).map((review, idx) => {
+                                const globalIdx = pageIndex * displayPerPage + idx;
+                                const isLongReview = globalIdx === 3; // Parent review
+                                return (
+                                    <div
+                                        key={idx}
+                                        className="h-full"
+                                    >
+                                        <div className="bg-primary-50/50 p-6 rounded-[2rem] h-full flex flex-col justify-between border border-primary-100/30 hover:bg-white transition-all duration-500 shadow-sm hover:shadow-xl">
+                                            <div>
+                                                <div className="flex mb-4 space-x-1">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <Star key={i} size={14} className="fill-primary-600 text-primary-600 opacity-60" />
+                                                    ))}
+                                                </div>
+                                                <p className={`text-primary-900/80 leading-relaxed font-light italic mb-6 ${isLongReview ? 'text-sm' : 'text-base'}`}>
+                                                    "{review.text}"
+                                                </p>
                                             </div>
-                                            <p className="text-primary-900/80 text-lg leading-relaxed font-light italic mb-8">
-                                                "{review.text}"
-                                            </p>
-                                        </div>
-                                        <div className="pt-6 border-t border-primary-100/50">
-                                            <p className="font-bold text-primary-900 tracking-tight">- {review.author}</p>
+                                            <div className="pt-4 border-t border-primary-100/50">
+                                                <p className="font-bold text-primary-900 tracking-tight text-sm">- {review.author}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     ))}
                 </motion.div>

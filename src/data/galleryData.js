@@ -97,6 +97,21 @@ export const galleryImages = [
     { src: 'images/hero/hero7.jpg', category: 'Kinder World', alt: 'Nature View' },
     { src: 'images/hero/hero8.jpg', category: 'Kinder World', alt: 'Nature View' },
     { src: 'images/hero/hero9.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero12.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero13.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero14.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero15.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero16.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero17.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero18.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero20.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero21.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero23.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero24.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero25.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero26.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero27.jpg', category: 'Kinder World', alt: 'Nature View' },
+    { src: 'images/hero/hero28.jpg', category: 'Kinder World', alt: 'Nature View' },
 
     // General Category Removed
 ];

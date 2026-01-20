@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import Button from '../components/common/Button';
 import { getAssetUrl } from '../utils/getAssetUrl';
-import { Flame, Trees, Mountain, Anchor, Users, Check } from 'lucide-react';
+import { Flame, Trees, Mountain, Anchor, Users, Check, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Slideshow = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,6 +38,7 @@ const Slideshow = ({ images }) => {
 
 const Activities = () => {
   const { hash } = useLocation();
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
   useEffect(() => {
     if (hash) {

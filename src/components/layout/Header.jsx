@@ -63,7 +63,7 @@ const Header = () => {
                   <img
                     src={getAssetUrl('images/logo.jpg')}
                     alt="Kinder World Logo"
-                    className="w-full h-full object-cover scale-[1.8] object-[center_55%] transition-transform duration-500"
+                    className="w-full h-full object-cover scale-[2.2] object-center transition-transform duration-500"
                   />
                 </div>
                 <div className="flex flex-col">

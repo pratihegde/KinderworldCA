@@ -7,35 +7,41 @@ const OurStory = () => {
     <div className="min-h-screen bg-[#FDFBF7]"> {/* Softer off-white/tan */}
       {/* Cinematic Hero Section */}
       {/* Cinematic Hero Section */}
-      <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[65vh] md:h-[75vh] flex items-center justify-center overflow-hidden">
         <motion.div
-          initial={{ scale: 1.1 }}
+          initial={{ scale: 1 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 2 }}
           className="absolute inset-0 z-0"
         >
           <img
-            src={getAssetUrl('images/gallery/ourstory.jpg')}
+            src={getAssetUrl('images/activities/hiking1.jpg')}
             alt="Our Story"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/20" />
         </motion.div>
+      </section>
 
-        <div className="relative z-10 text-center text-white px-4">
-          <motion.h1
+      {/* Hero Text Box Below Image */}
+      <section className="py-8 md:py-12 bg-white border-b border-primary-100">
+        <div className="container-custom text-center">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-8xl font-serif font-light mb-4"
           >
-            Our <span className="italic font-light">Story</span>
-          </motion.h1>
+            <h1 className="text-4xl md:text-6xl font-serif font-light mb-3 text-primary-950">
+              Our <span className="italic">Story</span>
+            </h1>
+            <p className="text-lg md:text-xl font-light italic text-primary-800">
+              "A deliberate way of living."
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* The Visionaries - Julie, Murph, and Max */}
-      <section className="py-24 md:py-32">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
             <motion.div
@@ -58,11 +64,8 @@ const OurStory = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-10"
+              className="space-y-8"
             >
-              <div className="inline-block px-4 py-1 bg-primary-50 text-primary-700 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] rounded-full">
-                The Family Behind the Mission
-              </div>
               <h2 className="text-4xl md:text-6xl font-serif font-bold text-primary-950 leading-tight">
                 Hunt Camp turns <br />
                 <span className="italic font-light text-primary-700">Vegan Retreat</span>
