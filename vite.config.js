@@ -5,8 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
-    // Only use /KinderworldCA/ in production (GitHub Pages)
-    // Use / for local development
-    base: mode === 'production' ? '/KinderworldCA/' : '/',
+    // Base path should be '/' for custom domain (kinderworld.ca)
+    base: '/',
   }
 })
