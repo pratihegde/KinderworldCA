@@ -13,11 +13,8 @@ import Contact from './pages/Contact';
 import ScrollToTop from './components/common/ScrollToTop';
 
 function App() {
-  // Match vite.config.js - no basename in development
-  const basename = import.meta.env.PROD ? '/KinderworldCA' : '';
-
   return (
-    <Router basename={basename}>
+    <Router>
       <ScrollToTop />
       <Layout>
         <Routes>
